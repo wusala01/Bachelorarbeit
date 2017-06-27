@@ -1,0 +1,106 @@
+\documentclass[12pt,a4paper,draft,oneside,openright,onecolumn,titlepage]{book}
+
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+\usepackage[english]{babel}
+\usepackage{dirtytalk}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{titling}
+\usepackage[left=2.cm,right=3cm,top=2cm,bottom=2cm]{geometry}
+\usepackage[style=authoryear-ibid, backend=biber]{biblatex}
+\usepackage{acronym}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec, blindtext, color}
+\usepackage{float}
+\usepackage{subcaption}
+
+\newcommand{\sekcite}[4]{%
+(\cite[#2]{#1} qtd.\ in \cite[#4]{#3})%
+}
+
+
+\newcounter{savepage}
+
+\renewcommand{\baselinestretch}{1.5}
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter \hspace{20pt} }{0pt}{\Huge\bfseries}
+
+\bibliography{bibliography}
+
+\author{Nick London}
+
+\title{Conceptual Aspects of Mobile Applications regarding Customer Purchasing Behaviour in a Business-to-Business Context}
+
+\begin{document}
+\begin{titlepage}
+	\includegraphics[height=8em]{img/logos/dhbw.pdf}
+	\hfill
+	\raisebox{3.5em}{\includegraphics[height=3em]{img/logos/ibm.pdf}}\par
+	\centering
+	\vfill
+	{\huge \textsc{\MakeLowercase{Bachelorthesis}}\par}
+	\vspace{2em}
+	{\Huge \textbf{\thetitle}\par}
+	\vspace{1.5em}
+	{\large Nick \textsc{London}\par}
+	\vfill
+	{scientifically supervised by\par Prof.~Dr.~Rainer~\textsc{Beedgen}\par}
+	\par\vspace{1em}
+	{practically supported by\par ~Markus \textsc{Sachs}\par}
+	\vspace{2em}
+	{Time allowed for completion\par April 11, 2017 to July 04, 2017\par}
+\end{titlepage}
+
+% Inhaltsverzeichnis
+\pagenumbering{Roman}
+\setcounter{page}{1}
+
+\addcontentsline{toc}{section}{Contents\vspace{0pt}}
+\tableofcontents
+
+% Abbildungsverzeichnis
+\newpage
+\addcontentsline{toc}{section}{List of Figures\vspace{0pt}}
+\listoffigures
+
+% Tabellenverzeichnis 
+\newpage
+\addcontentsline{toc}{section}{List of Tables}
+\listoftables
+\input{abbreviations.tex}
+\setcounter{savepage}{\arabic{page}}
+\newpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\input{chapters/introduction.tex}
+%\subfile{chapters/professionalContext}
+%\subfile{chapters/conceptualFoundations}
+\input{chapters/visualdesign.tex}
+\input{chapters/b2bmarketing.tex}
+\section{Visual Composition}
+%\subfile{chapters/appComposition}
+%\subfile{chapters/conclusion}
+
+\newpage 
+\pagenumbering{Roman}
+\addtocounter{savepage}{1}
+\setcounter{page}{\thesavepage}
+\addcontentsline{toc}{chapter}{Bibliography}
+\printbibliography
+
+% Anhang
+\newpage\clearpage
+\addcontentsline{toc}{chapter}{Appendix}
+\chapter*{Appendix}
+\renewcommand{\chaptermark}[1]{\markboth{}{\uppercase{#1}}}
+\chaptermark{Appendix}
+\begin{appendix}
+\renewcommand\thechapter{\Alph{chapter}}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+%\input{appendix/appendix1.tex}
+\end{appendix}
+
+\end{document}
