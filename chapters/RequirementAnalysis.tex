@@ -1,35 +1,87 @@
-\chapter{Requirements Engineering\label{chp:reqEng}}
+\section{Requirements}
+\paragraph{} \textcite[4]{Sommerville.2000} define requirements as \say{a specification of what should be implemented}. \textcite[13]{Pohl.2007} clarifies the term by calling it a condition or a trait a person or a system must have to solve a problem or obtain a goal, as well as any condition or trait which is essential for fulfilling a contract, standard or specification, and any written documentation of those. Those definitions differ drastically, but to understand the differences, one must understand the difference between requirement and specification that is done by \citeauthor{Pohl.2007}.
+\paragraph{} Specification is defined by \textcite[220]{Pohl.2007} as being a special form of documentation of requirements that is done following a context specific set of rules for specifications. Thereby the definitions of specification used by both authors are on the one hand the sense of technical specification on \citeauthor{Pohl.2007}'s work and \citeauthor{Sommerville.2000} relating to targets for a system. 
+\paragraph{} Because \citeauthor{Pohl.2007}'s definition also includes the documentation and is more precise, it is the definition of requirement this paper will continue to use.
+\subsection{Requirement Types}
+Two types of requirements appearing in most literature references are functional and quality requirements. \textcite[14]{Lauesen.2008} says that \say{functional requirements specify the functions of the system, how it records, computes, transforms, and transmits data.} \textcite[cf.][15]{Pohl.2007} complements that functional requirement. represent the functionality the aspired system shall provide its users. 
+\paragraph{} The other group called quality requirements are intended to reflect not what the system must do but how good it must be at these things \parencite[cf.][15]{Lauesen.2008}. The scales for good can for example include performance, accuracy, availability, reliability etc. \parencite[cf.][15]{Pohl.2007}. \textcite[cf.][29]{Ebert.2014} adds an additional classification of quality requirements he specifies as external quality which includes the points mentioned above, and internal quality which reflects the qualification of the system for testing, maintenance, porting and so on.
+\paragraph{} \textcite[cf.][15]{Lauesen.2008} suggest that quality requirements are also called non-functional requirements. \textcite[cf.][16-17]{Pohl.2007} points out that this term is differently used across literature, and that most definitions just add unspecific functional requirements and quality requirements together. As an example, he shows the unspecific functional requirement shown in \Cref{tab:reqSpec} (a) which cannot be an internal quality aspect for obvious reasons, nor an external quality due to the lack of measurability. Thereby it can only be a functional requirement. \textcite[17]{Pohl.2007} shows an exemplary specification of a  functional requirement in \Cref{tab:reqSpec} (b) to (e).
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|m{10cm}|}
+        \hline
+        (a) & R1 & The system  must be secure.\\
+         \hline
+        \hline
+        (b) & R1.1 & The user must authenticate to gain access to the system.\\
+        \hline
+        (c) & R1.2 & The authentication of the user must be done by using a digital certificate.\\
+        \hline
+        (d) & R1.3 & All data exchange between the user client and the system server must be encrypted.\\
+        \hline
+        (e) & R1.4 & Encryption of communication via an insecure network must be using a asynchronous encryption method with a key length of at least 1024 bit.\\
+        \hline
+    \end{tabular}
+    \caption[Specification of unspecific Functional Requirement]{Specification of unspecific Functional Requirement \parencite[17]{Pohl.2007}}
+    \label{tab:reqSpec}
+\end{table}
+
+\paragraph{} In order to reduce the risk of confusion, misunderstanding and mislabeling, this paper will not further use the term non-functional requirement.
+\paragraph{} \textcite[29]{Ebert.2014} and \textcite[18-19]{Pohl.2007} agree upon a third category of requirements, which are specified as not being easy to be changed. These requirements are called constraints and are preset conditions. Examples for constraints are legal limitations, financial budgets, development time etc.
+\paragraph{} The types of categories, not having shown overlapping definitions in the literature, that are used in this paper can be seen in \Cref{fig:reqTypes}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=1]{img/RequirementTypes.pdf}
+    \caption[Requirement Types]{Tpes of Requirements used in this paper (own illustration)}
+    \label{fig:reqTypes}
+\end{figure}
+\subsection{Requirements Engineering}
+\subsubsection{Motivation}
+ 
+% TODO 
+ 
+\subsubsection{Methodology}
+
 \begin{figure}[H]
     \centering
     \includegraphics[scale=1.3]{img/RequirementInformationStream.pdf}
     \caption[Information flow in Requirements Engineering]{Information flow in Requirement Engineering (\protect\cite[28]{Kotonya.2000})}
     \label{fig:reqFlow}
 \end{figure}
-Engineering requirements for a to-be system requires a large diversity of input information (cf. \Cref{fig:reqFlow}). The goals of \textit{Requirement Engineering} is to produce a set of requirements fitting to a modeled and specified system \parencite[cf.][262]{Pohl.2007}. \textit{Requirement Engineering} implies a repetitive and systematic approach to generate complete, relevant, consistent etc. requirements \parencite[5]{Sommerville.2000}. This approach includes the generation and management of requirements \parencite[262]{Pohl.2007}.
-\paragraph*{}
-Information sources for \textit{Requirements Engineering} include:
-\paragraph*{Existing System Information} include all information about systems to be interacted with, as well as a potential legacy system \parencite[cf.][28]{Kotonya.2000}.
-\paragraph*{Stakeholder needs} Stakeholders of a system are people or institutions that have some kind of direct or indirect causal relation with the system \parencite[cf.][8]{Sommerville.2000}. This may be users, developers, sponsors, customers, employees and many more. Each stakeholder has some needs for the system, may it be politically in the organization, support of work, legal determinations etc. \parencites[cf.][28]{Kotonya.2000}[cf.][350-351]{Lauesen.2008}
-\paragraph*{Organizational standards} Conformaty assurance within one company by regulating system development, quality management etc. \parencite[28]{Kotonya.2000}
-\paragraph*{Regulations}
-\section{Requirement Engineering Process} 
+Engineering requirements for a to-be system requires a diverse set of input information (cf. \Cref{fig:reqFlow}). The goal of Requirement Engineering is to produce a set of requirements fitting to a modeled and specified system \parencite[cf.][28]{Kotonya.2000}. A repetitive and systematic approach to generate complete, relevant, consistent etc. requirements is implied by Requirement Engineering \parencite[5]{Sommerville.2000}, including sourcing and management of requirements \parencite[262]{Pohl.2007}.
+\subparagraph*{}
+Information sources for Requirements Engineering include:
+\begin{enumerate}
+    \item Existing system information include all information about systems to be interacted with, as well as a potential legacy system \parencite[cf.][28]{Kotonya.2000}.
+    \item Stakeholders of a system are people or institutions that have some kind of direct or indirect causal relation with the system \parencite[cf.][8]{Sommerville.2000}. This may be users, developers, sponsors, customers, employees and many more. Each stakeholder has some needs for the system - being motivated by political interests in the organization, support of work, legal determinations or something differently \parencites[cf.][28]{Kotonya.2000}[cf.][350-351]{Lauesen.2008}
+    \item Organizational standards enforce conformaty assurance within one company by regulating system development, quality management etc. \parencite[28]{Kotonya.2000}
+    \item Regulations seek to protect the interests of certain stakeholders, e.g. health and safety regulations \parencite[cf.][28]{Kotonya.2000}.
+    \item \say{Domain information [..] about the application domain of the system} \parencite[28]{Kotonya.2000} 
+\end{enumerate}
+
+\paragraph{Requirement Engineering Process} 
 \begin{figure}[H]
     \centering
     \includegraphics[scale=1.5]{img/ReqAnFrameWork.pdf}
     \caption[Framework for Requirements Engineering]{Framework for Requirements Engineering (own illustration based on \cite[41]{Pohl.2007})}
     \label{fig:reqFramework}
 \end{figure}
-The \textit{Requirements Engineering Framework} by \textcite{Pohl.2007} defines the structural approach of filling the gap between input information and the vision and goals of a desired output (cf. \Cref{fig:reqFramework}). It analyzes the input information into four different facet of the system context: the entities, the IT-system, the usage and the development of desired application. The structured information is processed in three main activities (documentation, sourcing and confirmation), which lead to the requirement artifacts which represent the vision and goals of the product. \parencite[][38-39]{Pohl.2007}
-\subsection{System Context}
-Defining the boundary of \textit{System Context} is essential for successful \textit{Requirements Engineering}. It reflects in what way the desired outcome is related to objects - no matter whether physical or not \parencite[55]{Pohl.2007}. \textit{Context Diagrams} - as an example for visual \textit{System Context} representation - treat the system \say{as a black box surrounded by user groups and external systems with which it communicates} \parencite[76]{Lauesen.2008}. The \textit{System Context} represents the environment of a system, which is relevant for requirement analysis \parencite[55]{Pohl.2007}. The boundaries of the system context must be defined to scope out the not relevant part of the environment \parencite[55-56]{Pohl.2007}. The four facets for structuring input information of the system context of \textcite{Pohl.2007} are the following:
-\paragraph*{Entity Facet} 
-Entities are the digital representation of real world objects and their traits. This can include people such as users and subjects, physical objects such as assets, immaterial objects such as measurements, and processes. Important stakeholders are  professionals for the technical view and legal advisor and data security officials ensuring compliance. \parencite[cf.][70-71]{Pohl.2007}
-\paragraph*{IT-System Facet}
-The systemic facet of the \textit{System Context} is considering interface requirements to other technical systems such as the underlying hardware or systems the desired product must or may interchange data with \parencite[cf.][192]{Kotonya.2000}. Relevant stakeholders are architects, developers, test and maintenance professionals of the context systems, not the desired system \parencite[cf.][72]{Pohl.2007}.
-\paragraph*{Usage Facet} Deals with the demand by direct and indirect users for the system. User is this sense are people and systems having a direct interface with the desired product or are somehow impacting the interaction with the desired product or impact the usage of the system. \parencite[cf.][75-77]{Pohl.2007}
-\paragraph*{Development Facet}
-This facet regards all information about the development process. Stakeholders and sources for this facet mainly are people involved with the design, implementation and controlling of the development process, guidelines, standards and norms for development, and best practices and project reports. \parencite[cf.][79]{Pohl.2007}
-\subsection{Main Activity}
+The Requirements Engineering Framework by \textcite{Pohl.2007} defines the structural approach of filling the gap between input information and the vision and goals of a desired output (cf. \Cref{fig:reqFramework}). It analyzes the input information into four different facet of the system context: the entities, the IT-system, the usage and the development of desired application. The structured information is processed in three main activities (documentation, sourcing and confirmation), which lead to the requirement artifacts which represent the vision and goals of the product. \parencite[][38-39]{Pohl.2007}
+\subparagraph{System Context}
+Defining the boundary of System Context is essential for successful Requirements Engineering. It reflects in what way the desired outcome is related to objects - no matter whether physical or not \parencite[55]{Pohl.2007}. Context Diagrams - as an example for visual System Context representation - treat the system \say{as a black box surrounded by user groups and external systems with which it communicates} \parencite[76]{Lauesen.2008}. The System Context represents the environment of a system, which is relevant for requirement analysis \parencite[55]{Pohl.2007}. The boundaries of the system context must be defined to scope out the not relevant part of the environment \parencite[55-56]{Pohl.2007}. The four facets for structuring input information of the system context of \textcite{Pohl.2007} are the following:
+\begin{enumerate}
+    \item{Entity Facet} 
+    Entities are the digital representation of real world objects and their traits. This can include people such as users and subjects, physical objects such as assets, immaterial objects such as measurements, and processes. Important stakeholders are  professionals for the technical view and legal advisor and data security officials ensuring compliance. \parencite[cf.][70-71]{Pohl.2007}
+    \item{IT-System Facet}
+    The systemic facet of the System Context is considering interface requirements to other technical systems such as the underlying hardware or systems the desired product must or may interchange data with \parencite[cf.][192]{Kotonya.2000}. Relevant stakeholders are architects, developers, test and maintenance professionals of the context systems, not the desired system \parencite[cf.][72]{Pohl.2007}.
+    \item{Usage Facet} Deals with the demand by direct and indirect users for the system. User is this sense are people and systems having a direct interface with the desired product or are somehow impacting the interaction with the desired product or impact the usage of the system. \parencite[cf.][75-77]{Pohl.2007}
+    \item{Development Facet}
+    This facet regards all information about the development process. Stakeholders and sources for this facet mainly are people involved with the design, implementation and controlling of the development process, guidelines, standards and norms for development, and best practices and project reports. \parencite[cf.][79]{Pohl.2007}
+\end{enumerate}
+
+\subparagraph{Main Activity}
 \begin{figure}[H]
     \centering
     \includegraphics[scale=1]{img/MainActivity.pdf}
@@ -37,9 +89,14 @@ This facet regards all information about the development process. Stakeholders a
     \label{fig:infFlow}
 \end{figure}
 The main activities are interlinked by continuously exchanging information. \Cref{fig:infFlow} a minimalist outline of that flow of information is lined out. Starting from the supplied information by stakeholders, documents, etc. requirements are generated, aligned for conformity, and specified and documented. Feedback loops try to resolve any occurring errors such as conflicts of requirements or gaps.
-\paragraph*{Sourcing}
-Requirement sourcing founds on two different goals: detecting existing requirements, and create innovative requirements \parencite[cf.][318, 321]{Pohl.2007}. This is done by taking information from the information sources (see \Cref{chp:reqEng}) and analyzing the underlying needs \parencite[cf.][75-76]{Sommerville.2000}. Whenever conflicts of requirements, group dynamics etc. generate demand for an additional requirement without specific needs or a trade-off solution, a creative approach can be used to innovate new requirements \parencite[cf.][94]{Lauesen.2008}. 
-\paragraph*{Conformity}
-Finding competing requirements - in content, limited resources, or priority - in order to resolve those issues. The Conformity activity seeks to resolve those issues by analysis and management of conflicts. Possible solutions include management decisions, trade-offs, or inducing change requests. \parencite[cf.][393]{Pohl.2007}
-\paragraph*{Documentation} is used for recording all relevant information gathered in the main and cross-section activities \parencite[cf.][217]{Pohl.2007}. \textit{Requirements Engineering} distinguish two subsets of documented information: documented requirements and specified requirements. Only requirements that have been parsed from informal descriptions - as they are most commonly provided by operational or marketing departments - into standardized requirement templates are specified requirements \parencite[cf.][101]{Ebert.2014}. Depending on the kind of information to be documented, different levels of specification are necessary. Documenting activities helps identifying gaps and conflicts in existing requirements giving input to the other main activities \parencite[212]{Pohl.2007}
-\section{Requirement Artifacts}
+\begin{enumerate}
+    \item{Sourcing}
+    Requirement sourcing founds on two different goals: detecting existing requirements, and create innovative requirements \parencite[cf.][318, 321]{Pohl.2007}. This is done by taking information from the information sources (see \Cref{chp:reqEng}) and analyzing the underlying needs \parencite[cf.][75-76]{Sommerville.2000}. Whenever conflicts of requirements, group dynamics etc. generate demand for an additional requirement without specific needs or a trade-off solution, a creative approach can be used to innovate new requirements \parencite[cf.][94]{Lauesen.2008}. 
+    \item{Conformity}
+    Finding competing requirements - in content, limited resources, or priority - in order to resolve those issues. The Conformity activity seeks to resolve those issues by analysis and management of conflicts. Possible solutions include management decisions, trade-offs, or inducing change requests. \parencite[cf.][393]{Pohl.2007}
+    \item{Documentation} is used for recording all relevant information gathered in the main and cross-section activities \parencite[cf.][217]{Pohl.2007}. Requirements Engineering distinguish two subsets of documented information: documented requirements and specified requirements. Only requirements that have been parsed from informal descriptions - as they are most commonly provided by operational or marketing departments - into standardized requirement templates are specified requirements \parencite[cf.][101]{Ebert.2014}. Depending on the kind of information to be documented, different levels of specification are necessary. Documenting activities helps identifying gaps and conflicts in existing requirements giving input to the other main activities \parencite[212]{Pohl.2007}
+\end{enumerate}
+
+\subparagraph{Requirement Artifacts}
+
+\subsubsection{Implications}
