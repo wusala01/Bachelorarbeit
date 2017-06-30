@@ -13,12 +13,12 @@ This thesis will start the requirement engineering as suggested by \textcite{Poh
 
 
 \subsection{Using Diagrams}
-\begin{wrapfigure}{r}{0.5\textwidth}
+\begin{figure}[H]
     \centering
     \includegraphics[scale=1]{img/SCDSymbols.pdf}
     \caption[Symbols of System Context Diagrams]{Symbols of System Context Diagrams \parencites[77]{Lauesen.2008}}
     \label{fig:scdSym}
-\end{wrapfigure}
+\end{figure}
 The system context diagram consists of four components: system, people, data flow, and domain boundaries \parencites[cf.][76-77]{Lauesen.2008}. Each one has its own representation, displayed in \Cref{fig:scdSym}. System context diagrams are used to identify required interfaces \parencites[cf.][75]{Lauesen.2008}, as well as to define the system boundary \parencites[cf.][75]{Ebert.2014}. It is an important overview of requirement sources, reflecting all interacting systems and persons. The direction of the arrow can show the direction of the data flow, or more commonly display the direction of intend \parencite[cf.][77]{Lauesen.2008}. In this paper the direction of an arrow will display the direction of intend.
 
 
@@ -71,12 +71,12 @@ Satzschablone
 For the documentation of scenarios, two types of diagram are recommended by \textcite[299]{Pohl.2007}. On the one hand, the use case diagram, which displays the goals of actors when interacting with the system, and on the other hand, sequence diagrams, which display the chronological set of interactions included in one use case.
 
 \paragraph{} 
-\begin{wrapfigure}{r}{0.5\textwidth}
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{img/ucSymb.png}
     \caption[Use Case Diagram Notation]{Use Case Diagram Notation (own illustration based on \cite[163]{Pohl.2007})}
     \label{fig:ucSymb}
-\end{wrapfigure}
+\end{figure}
 As mentioned above, use case diagrams consist actors, use cases and the system. It display in what kind the actors are directly or indirectly linked to the use cases. Actors can be generalized aggregations of other actors. As an example: business traveler and tourists are both visitors of hotels. They have different goals when visiting the hotel, but share some as well. The use case diagram will display the individual goals with the distinct actors, but generalize them to the visitor actor, which connects to the common goals. This example can be seen in \Cref{fig:ucEx}. As seen in \Cref{fig:ucEx}, the goals do not have to be connected directly to the actor.
 \begin{figure}[H]
     \centering
@@ -85,22 +85,22 @@ As mentioned above, use case diagrams consist actors, use cases and the system. 
     \label{fig:ucEx}
 \end{figure}
 \paragraph{} 
-\begin{wrapfigure}{l}{0.5\textwidth}
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{img/adSymb.png}
     \caption[Activity Diagram Notation]{Activity Diagram Notation (own illustration based on \cite[160]{Pohl.2007})}
     \label{fig:adSymb}
-\end{wrapfigure}
+\end{figure}
 
 
 \subsubsection{Diagram Notation for Solution Oriented Requirements}
 \paragraph{} 
-\begin{wrapfigure}{r}{0.5\textwidth}
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{img/fmSymb.png}
     \caption[Function Model Notation]{Function Model Notation (own illustration based on \cite[190]{Pohl.2007})}
     \label{fig:fmSymb}
-\end{wrapfigure}
+\end{figure}
 
 
 \subsection{Validating Conformity}
