@@ -1,9 +1,17 @@
 \chapter{Methodological Approach to Requirement Engineering}
 \textcite[22-23]{Pohl.2007} explains, that applied requirements engineering always must be closely connected to the architectural planning of realization. This is because the architecture of a application induces insights, which can lead either to conflicts, or to gaps in the requirements set at the give state of work \parencites[22-23]{Pohl.2007}. 
-\paragraph{} This reflects the iterative nature of requirements engineering as described on \cpageref{iterative}.
-\section{Context Definition}
+
+\paragraph{} This reflects the iterative nature of requirements engineering as described on \cpageref{iterative}. Thereby each step but the first of the following procedure will end in a check for bidirectional implications of architecture and requirement. The reason for the first step not following a checkup is, that no requirements are formulated yet.
+
+\paragraph{} For reasons of simplicity, this feedback loop will not be mentioned after each individual methodological step. The tools for architectural design of applications will described at the end of this chapter.
+
+
+\section{Finding the Context Definition}
 This thesis will start the requirement engineering as suggested by \textcite{Pohl.2007} and described in \Cref{ssec:reqEn} by gathering information from the requirement sources. For orientation this paper will orientate at the source categories shown in \Cref{fig:reqFlow} on \cpageref{fig:reqFlow} going top down. 
+
 \paragraph{} In the first instance, personas (see below) will be produced, in order to gasp the stakeholders. Withdrawing from the personas and other sources of information - some provided by the sponsor -, goals will be derived into use cases (see below). Those use cases will be analyzed for implications on the facets of the system context, as described on \cpagerefrange{beginFacets}{endFacet}. 
+
+
 \subsection{Using Diagrams}
 \begin{wrapfigure}{r}{0.5\textwidth}
     \centering
@@ -12,8 +20,11 @@ This thesis will start the requirement engineering as suggested by \textcite{Poh
     \label{fig:scdSym}
 \end{wrapfigure}
 The system context diagram consists of four components: system, people, data flow, and domain boundaries \parencites[cf.][76-77]{Lauesen.2008}. Each one has its own representation, displayed in \Cref{fig:scdSym}. System context diagrams are used to identify required interfaces \parencites[cf.][75]{Lauesen.2008}, as well as to define the system boundary \parencites[cf.][75]{Ebert.2014}. It is an important overview of requirement sources, reflecting all interacting systems and persons. The direction of the arrow can show the direction of the data flow, or more commonly display the direction of intend \parencite[cf.][77]{Lauesen.2008}. In this paper the direction of an arrow will display the direction of intend.
+
+
 \subsection{Using Personas}
 Marketing communication applications have the quirk of having no direct impact of the targeted users on the product. They cannot directly be interviewed for goals and requirements. Additionally the group of targeted users is normaly to large to wrap your head around them. That is the reason for using personas. Human brains are caring more bout individuals, than large groups \parencite[cf.][]{Platt.2016}. Reasoning, archetypal individual people \parencite[cf.][81-82]{Cooper.2007}, which embody specific characteristics of groups \parencite[cf.][]{Platt.2016}. Identifying, analyzing, and prioritizing personas is a multistage procedure, which is always based on a type on research \parencite[cf.][39]{Robier.2016}. Research methods for this kind do not claim to scientifically acurate, but must not be based solely upon stereotypes and arbitrary decisions \parencite[cf.][82-83]{Cooper.2007}. 
+
 \paragraph{} For identification of relevant stakeholders \textcite[38]{Robier.2016} suggest the usage of a stakeholder map (cf. \Cref{fig:stakeMap}). People of the left hand side of the vertical axis are the users of the program, divided into heavy users (far left) and fist time users (narrow to the axis) \parencite[cf.][38]{Robier.2016}. This approach aims not at the identification of each individual stakeholder, but at the identification of stakeholder groups to be represented by a persona \parencite[cf.][82]{Cooper.2007}, explicitly  including non-users \parencite[cf.][84]{Cooper.2007}.
 \begin{figure}[H]
 \centering
@@ -22,8 +33,11 @@ Marketing communication applications have the quirk of having no direct impact o
     \label{fig:stakeMap}
 \end{figure}
 Analysis of the personas identified, includes the specification of a personas traits. Since personas are represented as individual people \parencite[cf.][81]{Cooper.2007}, it has all attributes a natural person has, including a name, gender, age, family, education, and most importantly: a motivation \parencites[cf.][]{Platt.2016}[cf.][83-84]{Cooper.2007}. All traits of a persona must be contributing to a bigger picture, and thereby must be intentionally be set to suggest intended characteristics \parencite[cf.]{Platt.2016}. 
+
 \paragraph{} As an example: Our persona Kevin Smith (25, male) works at a international bank as foreign trade manager after his studies in financial management at Harvard Business School and needs a way to plan his meetings in accordance to required travel times. In his free time he has a private single engine plane. If you ask yourself whether Kevin needs his schedule in a standardized time zone, such as UTC, the answer will definitely be yes, because he is on the one hand used to using UTC at work and in his hobby. Martha Jones (55, female) works at a local retailer since her diploma from community college, now being store manager, requiring a tool to plan and distribute shifts of her employees. She on the other hand will have more use for local time. Both may be personas for a calendar service focused on business customers. 
+
 \paragraph{} All traits of Kevin and Martha will have implications on the conception and development of the hypothetical calendar service. Beside the very different functionality requests of transport service provider integration, respectively shift planning and public calendar provisioning, the age may have implications on the devices used, as well as the education implies different kinds of prior knowledge. 
+
 \paragraph{} The prioritization of personas heavily depends on the specific product. It may be done by expected revenue (e.g. for sold services), least specialization (e.g. for training software) or any other reasonable technique for prioritization.
 \begin{figure}[H]
     \centering
@@ -31,14 +45,18 @@ Analysis of the personas identified, includes the specification of a personas tr
     \caption[Template for Personas]{The template used for personas in this paper (own illustration)}
     \label{fig:persTemp}
 \end{figure}
+
 \paragraph{} The resulting personas are usually documented in a resume containing all relevant information \parencites[cf.][40]{Robier.2016}[cf.][]{Platt.2016}. This paper will use the template shown in \Cref{fig:persTemp}. It includes a picture of the persona, his or her personal information, his or her goals, needs, and for users his or her technological parameters.
 
 
+\section{Main Activity}
 \subsection{Sourcing Requirements from the Context}
 The information of each facet will be compiled into goals for the desired outcome and which then will be clustered into the types of requirements described in \Cref{ssec:reqTypes} (cf. \Cref{fig:reqTypes} on \cpageref{fig:reqTypes}). The formulation of the goals will be done in a sentence stencil (see below) for requirement documentation. 
+
 \paragraph{} The requirements will be itemized and clarified as much as possible to that point. They also will be 
-\clearpage
-\subsection{Documentation}
+
+
+\subsection{Documenting the Requirements}
 \subsubsection{Natural Language Documentation of Goals}
 Satzschablone
 \begin{figure}[H]
@@ -47,7 +65,8 @@ Satzschablone
     \caption{Requirement Documentation Sentence Structure (own illustration based on \cite[246]{Pohl.2007})}
     \label{fig:sentencestructure}
 \end{figure}
-\clearpage
+
+
 \subsubsection{Diagram Notation for Scenarios}
 For the documentation of scenarios, two types of diagram are recommended by \textcite[299]{Pohl.2007}. On the one hand, the use case diagram, which displays the goals of actors when interacting with the system, and on the other hand, sequence diagrams, which display the chronological set of interactions included in one use case.
 
@@ -72,7 +91,8 @@ As mentioned above, use case diagrams consist actors, use cases and the system. 
     \caption[Activity Diagram Notation]{Activity Diagram Notation (own illustration based on \cite[160]{Pohl.2007})}
     \label{fig:adSymb}
 \end{wrapfigure}
-\clearpage
+
+
 \subsubsection{Diagram Notation for Solution Oriented Requirements}
 \paragraph{} 
 \begin{wrapfigure}{r}{0.5\textwidth}
@@ -81,13 +101,19 @@ As mentioned above, use case diagrams consist actors, use cases and the system. 
     \caption[Function Model Notation]{Function Model Notation (own illustration based on \cite[190]{Pohl.2007})}
     \label{fig:fmSymb}
 \end{wrapfigure}
-\clearpage
+
+
 \subsection{Validating Conformity}
 Scope Out
-\clearpage
-\chapter{Methodological Approach to User Interface Design}
 
-\section{Minimalist Approach of understandable User Interfaces}
+\section{Architectural Conception}
+\subsection{}
+
+
+\section{User Interface Conception}
+
+
+\subsection{Minimalist Approach of understandable User Interfaces}
 Facing the challenges of \textit{Attention Economy}, business decision makers must explore applications at a higher speed that private users, because as stated above, spend attention implies costs of opportunity \parencite[cf.][]{Bakar.2017}. Therefore, designing a application must be done in optimization for fast knowledge transfer and easy exploration. In order to achieve this goal, \textcite{Bakar.2017} suggests a set of goals:
 \begin{enumerate}
 \item{Getting Started Fast} implies, that no unnecessary contents are disturbing the user from using the core functionality of the page by drastically removing  \say{explanatory and procedural information and let the user learn [...] through exploration} \parencite{Bakar.2017}.
@@ -101,6 +127,8 @@ Facing the challenges of \textit{Attention Economy}, business decision makers mu
 \item{Reasoning and Improvising} relatives the approach of explorative interaction by offering instructions where compulsory.
 \end{enumerate}
 
-\section{Outlining with Wire Frames}
-\clearpage
-\section{Prototyping with Mock-ups}
+
+\subsection{Outlining with Wire Frames}
+
+
+\subsection{Prototyping with Mock-ups}
