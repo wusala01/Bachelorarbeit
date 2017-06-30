@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper,final,oneside,openright,onecolumn,titlepage]{book}
+\documentclass[12pt,a4paper,final,oneside,openright,onecolumn,titlepage]{scrbook}
 
 \usepackage[utf8]{inputenc}
 \usepackage{csquotes}
@@ -6,15 +6,18 @@
 \usepackage{dirtytalk}
 \usepackage{graphicx}
 \usepackage{titling}
+\usepackage{fontspec}
+\setmainfont[Ligatures=TeX]{Bitter-Regular.ttf}
 \usepackage[left=2.cm,right=3cm,top=2cm,bottom=2cm]{geometry}
 \usepackage[style=authoryear,maxcitenames=1, backend=biber]{biblatex}
 \usepackage{acronym}
-\usepackage[T1]{fontenc}
+%\usepackage[T1]{fontenc}
 \usepackage{titlesec, blindtext, color}
 \usepackage{float}
 \usepackage{subcaption}
 \usepackage{cleveref}
 \usepackage{array}
+\usepackage{wrapfig}
 
 \newcommand{\sekcite}[4]{%
 (\cite[#2]{#1} qtd.\ in \cite[#4]{#3})%
@@ -31,6 +34,10 @@
 
 \title{Conceptual Aspects of Mobile Applications regarding Customer Purchasing Behaviour in a Business-to-Business Context}
 
+\clubpenalty = 10000 
+\widowpenalty = 10000 
+\displaywidowpenalty = 10000
+
 \begin{document}
 \begin{titlepage}
 	\includegraphics[height=8em]{img/logos/dhbw.pdf}
@@ -38,7 +45,7 @@
 	\raisebox{3.5em}{\includegraphics[height=3em]{img/logos/ibm.pdf}}\par
 	\centering
 	\vfill
-	{\huge \textsc{\MakeLowercase{Bachelorthesis}}\par}
+	{\huge \textsc{\MakeUppercase{Bachelorthesis}}\par}
 	\vspace{2em}
 	{\Huge \textbf{\thetitle}\par}
 	\vspace{1.5em}
@@ -92,7 +99,7 @@
 \printbibliography
 \chapter*{Appendix}
 \addcontentsline{toc}{chapter}{Appendix}
-\renewcommand{\chaptermark}[1]{\markboth{}{\uppercase{#1}}}
+%\renewcommand{\chaptermark}[1]{\markboth{}{\uppercase{#1}}}
 \chaptermark{Appendix}
 \begin{appendix}
 \renewcommand\thechapter{\Alph{chapter}}

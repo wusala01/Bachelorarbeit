@@ -1,11 +1,11 @@
 \section{Requirements}
 \paragraph{} \textcite[4]{Sommerville.2000} define requirements as \say{a specification of what should be implemented}. \textcite[13]{Pohl.2007} clarifies the term by calling it a condition or a trait a person or a system must have to solve a problem or obtain a goal, as well as any condition or trait which is essential for fulfilling a contract, standard or specification, and any written documentation of those. Those definitions differ drastically, but to understand the differences, one must understand the difference between requirement and specification that is done by \citeauthor{Pohl.2007}.
-\paragraph{} Specification is defined by \textcite[220]{Pohl.2007} as being a special form of documentation of requirements that is done following a context specific set of rules for specifications. Thereby the definitions of specification used by both authors are on the one hand the sense of technical specification on \citeauthor{Pohl.2007}'s work and \citeauthor{Sommerville.2000} relating to targets for a system. 
+\paragraph{} Specification is defined by \textcite[220]{Pohl.2007} as being a special form of documentation of requirements that is done following a context specific set of rules. Thereby the definitions of specification - used by both authors - are on the one hand the sense of technical specification on \citeauthor{Pohl.2007}'s work and \citeauthor{Sommerville.2000} relating to targets for a system. 
 \paragraph{} Because \citeauthor{Pohl.2007}'s definition also includes the documentation and is more precise, it is the definition of requirement this paper will continue to use.
 \subsection{Requirement Types}
 Two types of requirements appearing in most literature references are functional and quality requirements. \textcite[14]{Lauesen.2008} says that \say{functional requirements specify the functions of the system, how it records, computes, transforms, and transmits data.} \textcite[cf.][15]{Pohl.2007} complements that functional requirement. represent the functionality the aspired system shall provide its users. 
-\paragraph{} The other group called quality requirements are intended to reflect not what the system must do but how good it must be at these things \parencite[cf.][15]{Lauesen.2008}. The scales for good can for example include performance, accuracy, availability, reliability etc. \parencite[cf.][15]{Pohl.2007}. \textcite[cf.][29]{Ebert.2014} adds an additional classification of quality requirements he specifies as external quality which includes the points mentioned above, and internal quality which reflects the qualification of the system for testing, maintenance, porting and so on.
-\paragraph{} \textcite[cf.][15]{Lauesen.2008} suggest that quality requirements are also called non-functional requirements. \textcite[cf.][16-17]{Pohl.2007} points out that this term is differently used across literature, and that most definitions just add unspecific functional requirements and quality requirements together. As an example, he shows the unspecific functional requirement shown in \Cref{tab:reqSpec} (a) which cannot be an internal quality aspect for obvious reasons, nor an external quality due to the lack of measurability. Thereby it can only be a functional requirement. \textcite[17]{Pohl.2007} shows an exemplary specification of a  functional requirement in \Cref{tab:reqSpec} (b) to (e).
+\paragraph{} The other group - called quality requirements - is intended to reflect not what the system must do but how good it must be at these things \parencite[cf.][15]{Lauesen.2008}. The scales for good can for example include performance, accuracy, availability, reliability etc. \parencite[cf.][15]{Pohl.2007}. \textcite[cf.][29]{Ebert.2014} adds an additional classification of quality requirements he specifies as external quality which includes the points mentioned above, and internal quality which reflects the qualification of the system for testing, maintenance, porting and so on. Quality requirements must be specifically measurable, because they otherwise cannot be verified \parencite[cf.][371-371]{Lauesen.2008}. 
+\paragraph{} \textcite[cf.][15]{Lauesen.2008} suggest that quality requirements are also called non-functional requirements. \textcite[cf.][16-17]{Pohl.2007} points out that this term is differently used across literature, and that most definitions just add unspecific functional requirements and quality requirements together. As an example, he shows the unspecific functional requirement shown in \Cref{tab:reqSpec} (a) which cannot concern the quality due to the lack of measurability. Thereby it can only be a functional requirement. \textcite[17]{Pohl.2007} shows an exemplary specification of a  functional requirement in \Cref{tab:reqSpec} (b) to (e).
 
 \begin{table}[H]
     \centering
@@ -28,8 +28,8 @@ Two types of requirements appearing in most literature references are functional
 \end{table}
 
 \paragraph{} In order to reduce the risk of confusion, misunderstanding and mislabeling, this paper will not further use the term non-functional requirement.
-\paragraph{} \textcite[29]{Ebert.2014} and \textcite[18-19]{Pohl.2007} agree upon a third category of requirements, which are specified as not being easy to be changed. These requirements are called constraints and are preset conditions. Examples for constraints are legal limitations, financial budgets, development time etc.
-\paragraph{} The types of categories, not having shown overlapping definitions in the literature, that are used in this paper can be seen in \Cref{fig:reqTypes}.
+\paragraph{} \textcite[29]{Ebert.2014} and \textcite[18-19]{Pohl.2007} agree upon a third category of requirements, which are specified as not being easy to be changed. These requirements are called constraints and are preset conditions. Examples for constraints are legal limitations, financial budgets, maximum development time etc.
+\paragraph{} The types of categories, not having shown overlapping definitions in the literature, are used in this paper and can be seen in \Cref{fig:reqTypes}.
 
 \begin{figure}[H]
     \centering
@@ -38,11 +38,6 @@ Two types of requirements appearing in most literature references are functional
     \label{fig:reqTypes}
 \end{figure}
 \subsection{Requirements Engineering}
-\subsubsection{Motivation}
- 
-% TODO 
- 
-\subsubsection{Methodology \label{sec:methReq}}
 Engineering requirements for a to-be system requires a diverse set of input information (cf. \Cref{fig:reqFlow}). The goal of Requirement Engineering is to produce a set of requirements fitting to a modeled and specified system \parencite[cf.][28]{Kotonya.2000}. A repetitive and systematic approach to generate complete, relevant, consistent etc. requirements is implied by Requirement Engineering \parencite[5]{Sommerville.2000}, including sourcing and management of requirements \parencite[262]{Pohl.2007}.
 \begin{figure}[H]
     \centering
@@ -66,7 +61,7 @@ Information sources for Requirements Engineering include:
     \caption[Framework for Requirements Engineering]{Framework for Requirements Engineering (own illustration based on \cite[41]{Pohl.2007})}
     \label{fig:reqFramework}
 \end{figure}
-\subparagraph{} Defining the boundary of system context is essential for successful requirements engineering. It reflects in what way the desired outcome is related entities of whatever kind \parencite[55]{Pohl.2007}. Context diagrams \parencites[cf.][266]{Kossiakoff.2011} - as an example for visual System Context representation - treat the system \say{as a black box surrounded by user groups and external systems with which it communicates} \parencite[76]{Lauesen.2008}. The System Context represents the environment of a system, which is relevant for requirement analysis \parencite[55]{Pohl.2007}. The boundaries of the system context must be defined to scope out the not relevant part of the environment \parencite[55-56]{Pohl.2007}. The four facets for structuring input information of the system context of \textcite{Pohl.2007} are the following:
+\subparagraph{} Defining the boundary of system context is essential for successful requirements engineering. It reflects in what way the desired outcome is related entities of whatever kind \parencite[55]{Pohl.2007}. Context diagrams \parencites[cf.][266]{Kossiakoff.2011} - as an example for visual system context representation - treat the system \say{as a black box surrounded by user groups and external systems with which it communicates} \parencite[76]{Lauesen.2008}. The System Context represents the environment of a system, which is relevant for requirement analysis \parencite[55]{Pohl.2007}. The boundaries of the system context must be defined to scope out the not relevant part of the environment \parencite[55-56]{Pohl.2007}. The four facets for structuring input information of the system context of \textcite{Pohl.2007} are the following:
 \begin{enumerate}
     \item{Entity Facet} 
     Entities are the digital representation of real world objects and their traits. This can include people such as users and subjects, physical objects such as assets, immaterial objects such as measurements, and processes. Important stakeholders are  professionals for the technical view and legal advisor and data security officials ensuring compliance. \parencite[cf.][70-71]{Pohl.2007}
@@ -88,14 +83,14 @@ Information sources for Requirements Engineering include:
     \item{Documentation} is used for recording all relevant information gathered in the main and cross-section activities \parencite[cf.][217]{Pohl.2007}. Requirements Engineering distinguish two subsets of documented information: documented requirements and specified requirements. Only requirements that have been parsed from informal descriptions - as they are most commonly provided by operational or marketing departments - into standardized requirement templates are specified requirements \parencite[cf.][101]{Ebert.2014}. Depending on the kind of information to be documented, different levels of specification are necessary. The documenting activity helps to identify gaps and conflicts in existing requirements giving input to the other main activities \parencite[212]{Pohl.2007}
 \end{enumerate}
 
-\subparagraph{} Requirement artifacts are documented requirements \parencite[85]{Pohl.2007}. There are three complementary categories of requirements: 
+\subparagraph{} Requirement artifacts are documented requirements \parencite[85]{Pohl.2007}. There are three complementary categories of requirement artifacts: 
 
 \begin{enumerate}
     \item Intentions of the stakeholders are documented as goals \parencite[cf.][85]{Pohl.2007}, substanciating the product vision \parencite[cf.][54]{Ebert.2014}. Goals are decomposed into groups of subgoals connected by logical AND and OR gateways \parencite[cf][91]{Pohl.2007}. Goal level requirements are optimal for understanding the reason for requirements, because they reflect the value of the requirement to the stakeholder \parencite[cf.][25]{Lauesen.2008}.
     \item Scenarios are list of steps in the system context that need to be done to fulfill a goal level requirement \parencite[125]{Pohl.2007}. \say{A scenario is an instantiation of a use case} \parencite[114]{Lauesen.2008}, meaning that each scenario matches a process within the system, or interaction with the system, including a desired outcome \parencite[cf.][114]{Lauesen.2008}.
-    \item Deducing from goals and scenarios, solution-oriented requirements specify all relevant information for developing the desired application \parencite[cf.][182-184]{Pohl.2007}. These requirements are based on three different perspectives (data, functionality and behaviour) and are documented in natural language and/or in models \parencite[cf.][184-187]{Pohl.2007}. Commonly a sentence pattern is used for natural language documentation      
+    \item Deducing from goals and scenarios, solution-oriented requirements specify all relevant information for developing the desired application \parencite[cf.][182-184]{Pohl.2007}. These requirements are based on three different perspectives (data, functionality and behaviour) and are documented in natural language and/or in models \parencite[cf.][184-187]{Pohl.2007}. Commonly sentence patterns are used for natural language documentation      
 \end{enumerate}
 
-\subparagraph{} Cross-Sectional Activities
-
-\subsubsection{Implications}
+\subparagraph{} Cross-Sectional Activities are done within each segment of requirements engineering \parencite[cf.][417, 493]{Pohl.2007}. 
+Validating the results of predefined process steps reduces the costs of changes done as the requirement engineering progresses \parencite[cf.][419]{Pohl.2007}. For that reason a set of quality specifications for intermediate and final results must be defined in advance of the engineering phase \parencite[cf.][418]{Pohl.2007}.
+The Management activity continuously watches and - if necessary - adjusts the definition of the system context, coordinates the main activities and organizes the requirement artifacts. \parencite[cf.][493]{Podjarny.2014}.
