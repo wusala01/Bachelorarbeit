@@ -2,14 +2,14 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage{csquotes}
-\usepackage[english]{babel}
+%\usepackage[english]{babel}
 \usepackage{dirtytalk}
 \usepackage{graphicx}
 \usepackage{titling}
-\usepackage{fontspec}
-\setmainfont[Ligatures=TeX]{Bitter-Regular.ttf}
-\usepackage[left=2.cm,right=3cm,top=2cm,bottom=2cm]{geometry}
-\usepackage[style=authoryear,maxcitenames=2, backend=biber,showmedium=true]{biblatex}
+%\usepackage{fontspec}
+%\setmainfont[Ligatures=TeX]{Bitter-Regular.ttf}
+%\usepackage[left=2.cm,right=3cm,top=2cm,bottom=2cm]{geometry}
+\usepackage[style=authoryear,maxcitenames=2, backend=biber,showmedium=true,useprefix=false]{biblatex}
 \usepackage{acronym}
 %\usepackage[T1]{fontenc}
 \usepackage{titlesec, blindtext, color}
@@ -17,7 +17,7 @@
 \usepackage{subcaption}
 \usepackage{cleveref}
 \usepackage{array}
-\usepackage{wrapfig}
+%\usepackage{wrapfig}
 
 \newcommand{\sekcite}[4]{%
 (\cite[#2]{#1} qtd.\ in \cite[#4]{#3})%
@@ -146,10 +146,10 @@
 \addcontentsline{toc}{chapter}{Bibliography}
 \chapter*{Bibliography}
 \addcontentsline{toc}{section}{Literature}
-\printbibliography[check=published, head={Literature}]
+\printbibliography[check=published,title={Literature}]
 \newpage
 \addcontentsline{toc}{section}{Electronic Media}
-\printbibliography[check=online, title={Electronic Media}]
+\printbibliography[check=online,title={Electronic Media}]
 \newpage
 \addcontentsline{toc}{section}{Other Sources}
 \printbibliography[check=gray,title={Other Sources}]
