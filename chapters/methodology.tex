@@ -1,5 +1,5 @@
 \chapter{Methodological Approach to Requirement Engineering}
-\textcite[22-23]{Pohl.2007} explains, that applied requirements engineering always must be closely connected to the architectural planning of realization. This is because the architecture of a application induces insights, which can lead either to conflicts, or to gaps in the requirements set at the give state of work \parencites[22-23]{Pohl.2007} as displayed in \cref{fig:iterative}. 
+\textcite[22-23]{Pohl.2007} explains, that applied requirements engineering always must be closely connected to the architectural planning of realization. This is because the architecture of a application induces insights, which can lead either to conflicts, or to gaps in the requirements set at the give state of work \parencites[22-23]{Pohl.2007} as displayed in \Cref{fig:iterative}. 
 
 \begin{figure}[H]
     \centering
@@ -15,7 +15,7 @@
 
 
 \section{Finding the Context Definition}
-This thesis will start the requirement engineering as suggested by \textcite{Pohl.2007} and described in \Cref{ssec:reqEn} by gathering information from the requirement sources. For orientation this paper will orientate at the source categories shown in \Cref{fig:reqFlow} on \cpageref{fig:reqFlow} going top down. 
+This thesis will start the requirement engineering as suggested by \textcite{Pohl.2007} and described in \cref{ssec:reqEn} by gathering information from the requirement sources. For orientation this paper will orientate at the source categories shown in \Cref{fig:reqFlow} on \cpageref{fig:reqFlow} going top down. 
 
 \paragraph{} In the first instance, personas (see below) will be produced, in order to gasp the stakeholders. Withdrawing from the personas and other sources of information - some provided by the sponsor -, goals will be derived into use cases (see below). Those use cases will be analyzed for implications on the facets of the system context, as described on \cpagerefrange{beginFacets}{endFacet}. 
 
@@ -67,7 +67,7 @@ The system context diagram consists of four components: system, people, data flo
 
 \section{Main Activity}
 \subsection{Sourcing Requirements from the Context}
-The information of each facet will be compiled into goals for the desired outcome and which then will be clustered into the types of requirements described in \Cref{ssec:reqTypes} (cf. \Cref{fig:reqTypes} on \cpageref{fig:reqTypes}). The formulation of the goals will be done in a sentence stencil (see below) for requirement documentation. 
+The information of each facet will be compiled into goals for the desired outcome and which then will be clustered into the types of requirements described in \cref{ssec:reqTypes} (cf. \Cref{fig:reqTypes} on \cpageref{fig:reqTypes}). The formulation of the goals will be done in a sentence stencil (see below) for requirement documentation. 
 
 \paragraph{} The requirements will be itemized and clarified as much as possible to that point. Afterwards, the requirements will be prioritized and potential conflicts will be resolved. The reason for the prioritization before generating consistency is, that in case of an unreasonable conflict, the priorities must be clear to know which requirement to drop.
 
@@ -88,50 +88,51 @@ Requirements must be expressed distinctly, in order to ensure the system is corr
 
 
 \subsubsection{In Diagram Notation}
-For the diagram documentation of a requirement, a fitting diagram type must be selected \textcite[299]{Pohl.2007}.  This thesis will use use case diagrams for the documentation of goals of stakeholders. A use case diagram displays those by abstracting stakeholders into actors with goals when interacting with the system. Secondly, this paper will utilize sequence diagrams, which display the chronological set of interactions, as a tool to visualize scenarios. Last but not least, use cases and scenarios will be merged into function models, which display the flow of information in the complete system. 
+For the diagram documentation of a requirement, a fitting diagram type must be selected \textcite[299]{Pohl.2007}.  This thesis will use use case diagrams (see below) for the documentation of stakeholder's goals. Secondly, this paper will utilize sequence diagrams, which display the chronological set of interactions, as a tool to visualize scenarios. Last but not least, use cases and scenarios will be merged into function models, which display the flow of information in the complete system. 
 
-\paragraph{} 
-\begin{figure}[H]
+\begin{figure}[H] 
     \centering
-    \includegraphics[scale=0.9]{img/ucSymb.png}
-    \caption[Use Case Diagram Notation]{Use Case Diagram Notation (own illustration based on \cite[163]{Pohl.2007})}
-    \label{fig:ucSymb}
+    \includegraphics[width=0.28\textwidth]{img/ucSymb.png}
+    \subcaption{Use Case Diagram Notation (own illustration based on \cite[163]{Pohl.2007}}\label{fig:ucSymb}
 \end{figure}
-As mentioned above, use case diagrams consist actors, use cases and the system. It display in what kind the actors are directly or indirectly linked to the use cases. Both, actors and use cases, can be generalized in an aggregated version of themselves. The notation may be seen in \cref{fig:ucSymb}.
+
+A use case diagram displays goals of stakeholders by abstracting stakeholders into actors, connected to use cases - abstracted goals -, when interacting with the system. Use case diagrams consist of actors, use cases and the system. It display in what kind the actors are directly or indirectly linked to the use cases. Both, actors and use cases, can be generalized in an aggregated version of themselves. The notation may be seen in \Cref{fig:ucSymb}.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.9]{img/ucEx.pdf}
-    \caption[Example Use Case Diagram]{Use Case Diagram showing the Notation (own illustration)}
-    \label{fig:ucEx}
+    \includegraphics[width=0.73\textwidth]{img/ucEx.pdf}
+    \subcaption[Use Case Diagram Example]{Use Case Diagram Example (own illustration)}\label{fig:ucEx}
 \end{figure}
 
 \paragraph{} As an example: business traveler and tourists are both visitors of hotels. They have different goals when visiting the hotel, but share some as well. The use case diagram will display the individual goals with the distinct actors, but generalize them to the visitor actor, which connects to the common goals. This example can be seen in \Cref{fig:ucEx}. 
 
 \paragraph{} As seen in \Cref{fig:ucEx}, the goals do not have to be connected directly to the actor. They might be included in a different goal (e.g. the closet) or may extend other use cases under certain conditions (e.g. ironing eqippment).
- 
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.9]{img/adSymb.png}
-    \caption[Activity Diagram Notation]{Activity Diagram Notation (own illustration based on \cite[160]{Pohl.2007})}
-    \label{fig:adSymb}
+
+\begin{figure}[H] 
+    \begin{minipage}[m]{.5\linewidth}
+        \centering
+        \includegraphics[width=0.7\textwidth]{img/adSymb.png}
+        \subcaption{Notation}\label{fig:adSymb}
+    \end{minipage}%
+    \begin{minipage}[m]{.5\linewidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{img/activityDiagram.png}
+        \subcaption{Example}\label{fig:adEx}
+    \end{minipage}
+    \caption[Activity Diagram Notation and Example]{Activity Diagram (a: based on \cite[160]{Pohl.2007}; b: own illustrations)}\label{fig:adEx}
 \end{figure}
 
-\paragraph{} The activity diagram, on the other hand, expresses a chronological order of activities done by certain entities (system, user, etc.). Those diagrams have one start point and at least to end points, as well as activities, which are connected by control flow lines (cf.\cref{fig:adSymb}).
+\paragraph{} The activity diagram, on the other hand, expresses a chronological order of activities done by certain entities (system, user, etc.). Those diagrams have one start point and at least to end points, as well as activities, which are connected by control flow lines (cf. \Cref{fig:adSymb}).
 
-\begin{figure}
-    \centering
-    \includegraphics[scale=0.9]{img/activityDiagram.png}
-    \caption[Example Activity Diagram]{Activity Diagram showing the Notation (own illustration)}
-    \label{fig:adEx}
-\end{figure}
+\paragraph{} For demonstration \Cref{fig:adEx} shows a activity diagram for a very simple parking ticket machine, as it is commonly used. What this demonstration leaks, is are logical gates such as AND or OR.
 
-\paragraph{} For demonstration \cref{fig:adEx} shows a activity diagram for a very simple parking ticket machine, as it is commonly used. What this demonstration leaks, is are logical gates such as AND or OR.
+
+\paragraph{} Function models are made to display the 
 
 \paragraph{} 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{img/fmSymb.png}
+    \includegraphics[scale=0.9]{img/fmSymb.png}
     \caption[Function Model Notation]{Function Model Notation (own illustration based on \cite[190]{Pohl.2007})}
     \label{fig:fmSymb}
 \end{figure}

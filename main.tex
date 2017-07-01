@@ -95,7 +95,6 @@
 \pagenumbering{Roman}
 \addtocounter{savepage}{1}
 \setcounter{page}{\thesavepage}
-\addcontentsline{toc}{chapter}{Bibliography}
 
 \defbibcheck{published}{%
     \iffieldundef{isbn}{%
@@ -136,12 +135,24 @@
          \skipentry%
     }%
 }
+
+\defbibheading{bibliography}[\bibname]{%
+    \section*{#1}%
+    \markboth{#1}{#1}%
+}
 %\defbibfilter{online}{url and not isbn and not issn and not doi}
 %\defbibfilter{other}{not url and not isbn and not issn and not doi}
 
-\printbibliography[check=published]
-\printbibliography[check=online]
-\printbibliography[check=gray]
+\addcontentsline{toc}{chapter}{Bibliography}
+\chapter*{Bibliography}
+\addcontentsline{toc}{section}{Literature}
+\printbibliography[check=published, head={Literature}]
+\newpage
+\addcontentsline{toc}{section}{Electronic Media}
+\printbibliography[check=online, title={Electronic Media}]
+\newpage
+\addcontentsline{toc}{section}{Other Sources}
+\printbibliography[check=gray,title={Other Sources}]
 \chapter*{Appendix}
 \addcontentsline{toc}{chapter}{Appendix}
 %\renewcommand{\chaptermark}[1]{\markboth{}{\uppercase{#1}}}
