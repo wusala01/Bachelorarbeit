@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper,draft,oneside,openright,onecolumn,titlepage]{scrbook}
+\documentclass[12pt,a4paper,final,oneside,openright,onecolumn,titlepage]{scrbook}
 
 \usepackage[utf8]{inputenc}
 \usepackage{csquotes}
@@ -27,6 +27,10 @@
 
 \renewcommand{\baselinestretch}{1.5}
 \titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter \hspace{20pt} }{0pt}{\Huge\bfseries}
+
+\newcommand{\ssay}[1]{%
+    \mbox{\say{#1}}%
+}
 
 \bibliography{bibliography}
 
