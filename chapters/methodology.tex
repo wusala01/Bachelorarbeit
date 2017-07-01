@@ -84,7 +84,7 @@ Requirements must be expressed distinctly, in order to ensure the system is corr
     \label{fig:sentencestructure}
 \end{figure}
 
-\paragraph{} In order to counter these issues, this paper will use the sentence structure suggested by \textcites[107]{Ebert.2014}[246]{Pohl.2007}. Sentence structures like these help to clarify and structure requirements, as log as only one requirement is represented per sentence \parencite[107]{Ebert.2014}. 
+In order to counter these issues, this paper will use the sentence structure suggested by \textcites[107]{Ebert.2014}[246]{Pohl.2007}. Sentence structures like these help to clarify and structure requirements, as log as only one requirement is represented per sentence \parencite[107]{Ebert.2014}. 
 
 
 \subsubsection{In Diagram Notation}
@@ -103,7 +103,7 @@ A use case diagram displays goals of stakeholders by abstracting stakeholders in
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.73\textwidth]{img/ucEx.pdf}
+    \includegraphics[width=0.73\textwidth]{img/ucEx.png}
     \subcaption[Use Case Diagram Example]{Use Case Diagram Example (own illustration)}\label{fig:ucEx}
 \end{figure}
 
@@ -145,9 +145,26 @@ A use case diagram displays goals of stakeholders by abstracting stakeholders in
 Scope Out
 
 \section{Architectural Conception}
-While the UML \parencite[cf.]{}
-\subsection{}
+This paper will use UML component diagrams in the alternate notation \parencite[cf.][212]{ObjectManagementGroup.01.03.2015} for architectural composition of the application. An example of a component diagram can be seen in \Cref{fig:comEx}.
 
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{img/componentExample.pdf}
+    \caption[Component Diagram Example]{Component Diagram Example \parencites[2132]{ObjectManagementGroup.01.03.2015}}
+    \label{fig:comEx}
+\end{figure}
+
+A component in UML notation may be identified either by the keyword \ssay{<<component>>}, or by a component icon in the top right corner \parencites[cf.][208]{ObjectManagementGroup.01.03.2015}. Both is true for \Cref{fig:comEx}. 
+
+\paragraph{} In UML structure diagrams, as the component diagram is, entities follow some basic structures:
+
+\begin{enumerate}
+    \item Entities are labeled by a name, and/or are assigned a  classifier by the \ssay{:[classifier]}-notation  \parencite[cf.][125]{ObjectManagementGroup.01.03.2015}. For instance in \Cref{fig:comEx} \ssay{Store} is the name of a component and its inner components are classified as \ssay{Order},\ssay{Customer}, and \ssay{Product}. If \ssay{Store} gets assigned to a classifier (e.g.~\ssay{Business}), the new label will be \ssay{Store :Business}.
+    
+    \item Components can provide and use interfaces, called ports \parencite[cf.][182-184]{ObjectManagementGroup.01.03.2015}. In \Cref{fig:comEx} the component, classified as \ssay{:Product}, provides the interface \ssay{OrderableItem}, which is used by \ssay{:Order}.
+    
+    \item Whenever a interfaces is provided to outside components, a square displays the delegation \parencite[cf.][212]{ObjectManagementGroup.01.03.2015}. In \Cref{fig:comEx} for instance, the port \ssay{OrderEntry} is originally provided by some internal logic of \ssay{:Order}, then delegated to \ssay{Store}, which provides it to other external components. 
+\end{enumerate}
 
 \section{User Interface Conception}
 
