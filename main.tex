@@ -9,7 +9,7 @@
 \usepackage{fontspec}
 \setmainfont[Ligatures=TeX]{Bitter-Regular.ttf}
 \usepackage[left=2.cm,right=3cm,top=2cm,bottom=2cm]{geometry}
-\usepackage[style=authoryear,maxcitenames=2, backend=biber]{biblatex}
+\usepackage[style=authoryear,maxcitenames=2, backend=biber,showmedium=true]{biblatex}
 \usepackage{acronym}
 %\usepackage[T1]{fontenc}
 \usepackage{titlesec, blindtext, color}
@@ -96,7 +96,52 @@
 \addtocounter{savepage}{1}
 \setcounter{page}{\thesavepage}
 \addcontentsline{toc}{chapter}{Bibliography}
-\printbibliography
+
+\defbibcheck{published}{%
+    \iffieldundef{isbn}{%
+        \iffieldundef{issn}{%
+            \skipentry
+        }{}%
+    }{}%
+}
+\defbibcheck{online}{%
+    \iffieldundef{isbn}{%
+        \iffieldundef{issn}{%
+            \iffieldundef{doi}{%
+                \iffieldundef{url}{%
+                    \skipentry%
+                }{}%
+            }{}%
+        }{%
+            \skipentry%
+        }%
+    }{%
+        \skipentry%
+    }%
+}
+\defbibcheck{gray}{%
+    \iffieldundef{isbn}{%
+        \iffieldundef{issn}{%
+            \iffieldundef{doi}{%
+                \iffieldundef{url}{}{%
+                     \skipentry%
+                }%
+            }{%
+                 \skipentry%
+            }%
+        }{%
+             \skipentry%
+        }%
+    }{%
+         \skipentry%
+    }%
+}
+%\defbibfilter{online}{url and not isbn and not issn and not doi}
+%\defbibfilter{other}{not url and not isbn and not issn and not doi}
+
+\printbibliography[check=published]
+\printbibliography[check=online]
+\printbibliography[check=gray]
 \chapter*{Appendix}
 \addcontentsline{toc}{chapter}{Appendix}
 %\renewcommand{\chaptermark}[1]{\markboth{}{\uppercase{#1}}}
