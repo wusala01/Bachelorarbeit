@@ -96,7 +96,7 @@ Use case diagrams (see below) will be utilized for the documentation of stakehol
 \begin{figure}[H] 
     \centering
     \includegraphics[width=0.28\textwidth]{img/ucSymb.png}
-    \subcaption{Use Case Diagram Notation (own illustration based on \cite[163]{Pohl.2007}}\label{fig:ucSymb}
+    \caption{Use Case Diagram Notation (own illustration based on \cite[163]{Pohl.2007}}\label{fig:ucSymb}
 \end{figure}
 
 A use case diagram displays goals of stakeholders by abstracting stakeholders into actors, connected to use cases - abstracted goals -, when interacting with the system. Use case diagrams consist of actors, use cases and the system. It display in what kind the actors are directly or indirectly linked to the use cases. Both, actors and use cases, can be generalized in an aggregated version of themselves. The notation may be seen in \Cref{fig:ucSymb}.
@@ -112,26 +112,27 @@ A use case diagram displays goals of stakeholders by abstracting stakeholders in
 \paragraph{} If the \ssay{Customer} requires help \ssay{Perform[ing a] ATM Transaction}, the system offers a \ssay{Selection} with the option \ssay{HELP}. This is regarded as a extension of the goal, as the user does not have to make demands on getting helped \parencite[cf.][638-639]{ObjectManagementGroup.01.03.2015}.
 
 \paragraph{} 
-Other actors might have completely different goals, when using the ATM, like the Administrator
-
-\paragraph{} As seen in \Cref{fig:ucEx}, the goals do not have to be connected directly to the actor. They might be included in a different goal (e.g. the closet) or may extend other use cases under certain conditions (e.g. ironing equippment).
-
+Other actors might have different, but also overlapping goals.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{img/adSymb.png}
-    \subcaption{Notation}\label{fig:adSymb}
+    \caption{Notation}\label{fig:adSymb}
 \end{figure}
 
-\begin{figure}[H] ]{.5\linewidth}
+\paragraph{} The activity diagram, on the other hand, expresses a chronological order of activities executed in a use case. Those diagrams have one start point and at least to end points. In between, actions are connected by control flow lines. This flow can separate and join again to display more complex, non-linear activities  (cf. \Cref{fig:adSymb}).
+
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{img/activityDiagram.png}
+    \includegraphics[width=\textwidth]{img/ActivityExample.pdf}
     \caption{Activity Diagram Example \parencite[380]{ObjectManagementGroup.01.03.2015}}\label{fig:adEx}
 \end{figure}
 
-\paragraph{} The activity diagram, on the other hand, expresses a chronological order of activities done by certain entities (system, user, etc.). Those diagrams have one start point and at least to end points, as well as activities, which are connected by control flow lines (cf. \Cref{fig:adSymb}).
+\paragraph{} For demonstration \Cref{fig:adEx} shows a order processing activity. After receiving the request, it is decided whether the order is rejected or accepted. 
 
-\paragraph{} For demonstration \Cref{fig:adEx} shows a activity diagram for a very simple parking ticket machine, as it is commonly used. What this demonstration leaks, is are logical gates such as AND or OR.
+\paragraph{} If the order is accepted, the order is shipped and an invoice is sent. Once the invoice is received, and the order shipped, the order is closed. 
+
+\paragraph{} In case the order is rejected, it is closed immediately. 
 
 
 \paragraph{} Function models are made to display the 
@@ -179,12 +180,12 @@ Facing the challenges of \textit{Attention Economy}, business decision makers mu
 \item{Getting Started Fast} implies, that no unnecessary contents are disturbing the user from using the core functionality of the page by drastically removing  \say{explanatory and procedural information and let the user learn [...] through exploration} \parencite{Bakar.2017}.
 \item{Training on Real Tasks} leads the user more easily receiving information and being more restrained by the application, due to a sense of excitement.
 \item{Reading in Any Order} means the quality of the individual information to be not to have perquisite knowledge of any other page within the application.
-\item{Exploiting Prior Knowledge} can help to keep the users attention by mostly presenting new information. This is documented as being dificult to be implemented successfully \sekcite{Carroll.1987}{}{Farkas.1990}{}.
+\item{Exploiting Prior Knowledge} can help to keep the users attention by mostly presenting new information. This is documented as being difficult to be implemented successfully \sekcite{Carroll.1987}{}{Farkas.1990}{}.
 \item{Coordinating System and Training} represents the progress of novice users in learning to work with the software. This is accomplished by keeping the users attention on the user interface and supplying constructive information.
 \item{Supporting Error Recognition and Recovery} implies strong testing of the application to determine necessary error recognition and implement sufficient information recovery.
 \item{Using the Situation} suggest providing the user many ways to explore the application in means of functionality and informational contents. Offering options for preoccupying oneself with the application amplifies the information transfer but increases the potential for errors.
 \item{Developing Optimal Training Design} pertains the correlation of the user interface design to the users needs and behaviours. 
-\item{Reasoning and Improvising} relatives the approach of explorative interaction by offering instructions where compulsory.
+\item{Reasoning and Improvising} relatives the approach of exploratory interaction by offering instructions where compulsory.
 \end{enumerate}
 
 
