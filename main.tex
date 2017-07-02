@@ -2,23 +2,23 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage{csquotes}
-%\usepackage[english]{babel}
+\usepackage[english]{babel}
 \usepackage{dirtytalk}
 \usepackage{graphicx}
 \usepackage{titling}
-%\usepackage{fontspec}
-%\setmainfont[Ligatures=TeX]{Bitter-Regular.ttf}
-%\usepackage[left=2.cm,right=3cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{fontspec}
+\setmainfont[Ligatures=TeX]{Bitter-Regular.ttf}
+\usepackage[left=2.cm,right=3cm,top=2cm,bottom=2cm]{geometry}
 \usepackage[style=authoryear,maxcitenames=2, backend=biber,showmedium=true,useprefix=false]{biblatex}
 \usepackage{acronym}
-%\usepackage[T1]{fontenc}
+\usepackage[T1]{fontenc}
 \usepackage{titlesec, blindtext, color}
 \usepackage{float}
 \usepackage{subcaption}
 \usepackage{hyperref}
 \usepackage{cleveref}
 \usepackage{array}
-%\usepackage{wrapfig}
+\usepackage{lipsum}
 \hypersetup{
     colorlinks,
     citecolor=black,
@@ -77,6 +77,9 @@
 \pagenumbering{Roman}
 \setcounter{page}{1}
 
+\addcontentsline{toc}{section}{Abstract}
+\chapter*{Abstract}
+
 \addcontentsline{toc}{section}{Contents}
 \tableofcontents
 
@@ -96,12 +99,13 @@
 \pagenumbering{arabic}
 \setcounter{page}{1}
 
-\input{chapters/introduction.tex}
-\chapter{Literature Review}
-\input{chapters/RequirementAnalysis.tex}
-\input{chapters/visualdesign.tex}
-\input{chapters/b2bmarketing.tex}
-\input{chapters/methodology.tex}
+\input{chapters/introduction.tex}%
+\chapter{Literature Review}%
+\input{chapters/RequirementAnalysis.tex}%
+\input{chapters/visualdesign.tex}%
+\input{chapters/b2bmarketing.tex}%
+\input{chapters/methodology.tex}%
+\input{chapters/PracticalAppliance.tex}%
 
 \newpage
 \pagenumbering{Roman}
@@ -174,4 +178,12 @@
 \input{appendix/appendix1.tex}
 \end{appendix}
 
+\addcontentsline{toc}{chapter}{Declaration of Authorship}
+\chapter*{Declaration of Authorship}
+I hereby declare that I wrote my Bachelothesis about \say{\thetitle} originally and only used sources and resources as declared. I also declare that the electronic and printed version I have turned in are identical.
+
+\paragraph*{}
+\vspace{.2in}
+\makebox[2.5in]{\hrulefill}\par
+Nick London
 \end{document}

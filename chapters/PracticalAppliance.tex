@@ -1,0 +1,68 @@
+\chapter{Practical Appliance}
+As described in the previous chapter, this chapter will walk through the requirement engineering process for a B2B marketing application. For better understanding, itemized information (I), requirements (R) will be labeled with letter and a hierarchical numeric identifier (e.g. \ssay{I3.2.3}).
+\section{Input information}
+\subsection{The Sponsor}
+Starting with the sponsor, he explained, that he would like to have an application or website, which he "can give to a customer to play around with and get to know the skills of IBM" \parencite{Sachs.20.04.2017}. Further he explained, that in a tendering procedure, IBM is perceived with its past skill as a mainframe supplier \parencite{Sachs.20.04.2017}. Therefore the app must arouse the intrest of the potential customer and display that IBM has experience, knowledge and skills in the domain. 
+
+\paragraph{} As a condition for access by the potential customer, the sponsor required some kind of authentication, which would lock the customer out if the access is not extended by an IBMer after two weeks time.
+
+\paragraph{} Summarized:
+
+\begin{itemize}
+    \item [\textbf{I1}] When a customer uses the application, the system shall provide him with the ability to receive information about IBM skills.
+    \item [\textbf{I2}] When a customer tries to use the site, the system shall request some kind of authentication.
+    \item [\textbf{I2.1}] When customer access rights age two weeks without being extended, the system shall revoke the access rights.
+    \item [\textbf{I2.2}\label{R2.2}] When a user is an IBMer the application, the system shall provide the user with the ability to extend customer access rights.
+\end{itemize}
+
+\paragraph{} Implied by I2.2, that IBM employees must be able to log into the system in a way that proves their connection to IBM. This causes a new Requirement:
+
+\begin{itemize}
+    \item [\textbf{I3}] When the system is accessed, the system shall provide IBM employees the ability to log in with their corporate identity.
+\end{itemize}
+
+
+\subsection{Organizational Standards}
+Subsequent to R3, IBM has a organizational standard for authentication on application, which are also available online: the so-called w3ID-Login, a OAuth2.0 \parencite[cf.][]{InternetEngineeringTaskForce.2012} based authentication procedure \parencite[cf.][]{IBMCorporation.2016}.
+
+\begin{itemize}
+    \item [\textbf{I3.1}] When a user wants to identify as an IBM employee, the system shall forward the user to the w3ID site in accordance to the OAuth2.0 specification.
+\end{itemize}
+
+\paragraph{} In addition to authentication procedures, IBM requires all applications to follow a set of rules:
+
+\paragrapph{} The development must follow the 'MobileFirst'-idea, which is explained as acting on the principle to develop everything for mobile devices first. Mobile device in this context references to small screen devices with no keyboard. Afterwards the design and functionality may be extended to larger devices with more peripheral devices (mouse, keyboard, etc.)
+
+\begin{itemize}
+    \item [\textbf{I4}] When a contributor does work for the system, the contributor should do the work for mobile devices prioritized.
+\end{itemize}
+
+\subsection{Regulations}
+
+\subsection{Domain Information}
+
+\subsection{Stakeholder Needs}
+
+\subsection{Existing System Information}
+
+
+\section{System Context Definition}
+\subsection{Entities}
+
+\subsection{IT-System}
+
+\subsection{Usage}
+
+\subsection{Development}
+
+
+\section{Engineering Requirements}
+
+
+\chapter{Discussion}
+
+
+\chapter{Limitations and Future Work}
+
+
+\chapter{Conclusion}
