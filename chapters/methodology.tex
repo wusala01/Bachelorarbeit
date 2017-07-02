@@ -1,5 +1,5 @@
-\chapter{Methodological Approach to Requirement Engineering}
-\textcite[22-23]{Pohl.2007} explains, that applied requirements engineering always must be closely connected to the architectural planning of realization. This is because the architecture of a application induces insights, which can lead either to conflicts, or to gaps in the requirements set at the give state of work \parencites[22-23]{Pohl.2007} as displayed in \Cref{fig:iterative}. 
+\chapter{Methodological Approach}
+\textcite[22-23]{Pohl.2007} explains, that applied requirements engineering always must be closely connected to the architectural planning of realization. This is because the architecture of a application induces insights, which can lead either to conflicts, or to gaps in the requirements set at the give state of work \parencites[22-23]{Pohl.2007}. \Cref{fig:iterative} shows that with a increase in the level of detail, a repeating comparison of the problem (requirement) and solution (concept) perspective to check the impacts on realization.
 
 \begin{figure}[H]
     \centering
@@ -8,22 +8,41 @@
     \label{fig:iterative}
 \end{figure}
 
-\paragraph{} This reflects the iterative nature of requirements engineering as described on \cpageref{iterative}. Thereby each step but the first of the following procedure will end in a check for bidirectional implications of architecture and requirement. The reason for the first step not following a checkup is, that no requirements are formulated yet. 
+\paragraph{} This reflects the iterative nature of requirements engineering as described on \cpageref{iterative}. Thereby a check for bidirectional implications of architecture concept and requirement will be made by the end of each step of the following procedure.
 
-
-\paragraph{} This paper will begin with the definition of the context, and then perform the three main activities (cf. \cpageref{mainactivity} and \cpagerefrange{beginmain}{endmain}). In an iterative process, architectural designs will be done, as described above. 
+\paragraph{} This paper will start with the definition of the context, and then perform the three main activities (cf. \cpageref{mainactivity} and \cpagerefrange{beginmain}{endmain}). In Architectural concept will be created, as described above, followed by a visual concept. 
 
 
 \section{Finding the Context Definition}
-This thesis will start the requirement engineering as suggested by \textcite{Pohl.2007} and described in \cref{ssec:reqEn} by gathering information from the requirement sources. For orientation this paper will orientate at the source categories shown in \Cref{fig:reqFlow} on \cpageref{fig:reqFlow} going top down. 
+This thesis will start the requirement engineering as suggested by \textcite[55]{Pohl.2007} and described in \cref{ssec:reqEn} by available input information. For orientation this paper will orientate at the source categories shown in \Cref{fig:reqFlow} on \cpageref{fig:reqFlow} going top down. 
 
-\paragraph{} In the first instance, personas (see below) will be produced, in order to gasp the stakeholders. Withdrawing from the personas and other sources of information - some provided by the sponsor -, goals will be derived into use cases (see below). Those use cases will be analyzed for implications on the facets of the system context, as described on \cpagerefrange{beginFacets}{endFacet}. 
+\paragraph{} In the first instance, a sketch system context diagram will be created. Secondly, personas (cf. \Cref{ssec:personas}) will be produced, in order to gasp the stakeholders. Withdrawing from the personas and other sources of information, goals will identified. These will be analyzed for implications on the facets of the system context, as described on \cpagerefrange{beginFacets}{endFacet}.
 
 
-\subsection{Using Personas}
-Human brains are caring more bout individuals, than large groups \parencite[cf.][]{Platt.2016}. Therefore, archetypal individual people \parencite[cf.][81-82]{Cooper.2007}, which embody specific characteristics of groups \parencite[cf.][]{Platt.2016} are more easy to gasp. That is the reason for using personas, which do exactly that.
+\subsection{System Context Diagram}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=1]{img/SCDSymbols.pdf}
+    \caption[Symbols of System Context Diagrams]{Symbols of System Context Diagrams \parencites[77]{Lauesen.2008}}
+    \label{fig:scdSym}
+\end{figure}
+The system context diagram consists of four components: system, people, data flow, and domain boundaries \parencites[cf.][76-77]{Lauesen.2008}. Each one has its own representation, displayed in \Cref{fig:scdSym}. System context diagrams are used to identify required interfaces \parencites[cf.][75]{Lauesen.2008}, as well as to define the system boundary \parencites[cf.][75]{Ebert.2014}. It is an important overview of requirement sources, reflecting all interacting systems and persons. The direction of the arrow can show the direction of the data flow, or more commonly display the direction of intend \parencite[cf.][77]{Lauesen.2008}. In this paper the direction of an arrow will display the direction of intend.
 
-\paragraph{} Identifying, analyzing, and prioritizing personas is a multistage procedure, which is always based on research \parencite[cf.][39]{Robier.2016}. Research methods for this kind do not claim to scientifically accurate, but must not be based solely upon stereotypes and arbitrary decisions \parencite[cf.][82-83]{Cooper.2007}. 
+
+\section{Main Activity}
+\subsection{Sourcing Requirements from the Context}
+The information of each facet will be compiled into goals for the desired outcome and which then will be clustered into the types of requirements described in \cref{ssec:reqTypes} (cf. \Cref{fig:reqTypes} on \cpageref{fig:reqTypes}). The formulation of the goals will be done in a sentence stencil (see below) for requirement documentation. 
+
+\paragraph{} The requirements will be itemized and clarified as much as possible to that point. Afterwards, the requirements will be prioritized and potential conflicts will be resolved. The reason for the prioritization before generating consistency is, that in case of an unreasonable conflict, the priorities must be clear to know which requirement to drop.
+
+
+\subsection{Personas \label{ssec:personas}}
+
+Personas are representations of target groups as individual archetypal person \parencite[cf.][81]{Cooper.2007}. They have all attributes a natural person has, including a name, gender, age, family, education, and most importantly: a motivation \parencites[cf.][]{Platt.2016}[cf.][83-84]{Cooper.2007}. 
+
+\paragraph{} Human brains are caring more bout individuals, than large groups \parencite[cf.][]{Platt.2016}. Therefore, archetypal individual people \parencite[cf.][81-82]{Cooper.2007}, which embody specific characteristics of groups \parencite[cf.][]{Platt.2016} are more easy to gasp.
+
+\paragraph{} Identifying, analyzing, and prioritizing personas is always based on research \parencites[cf.][39]{Robier.2016}[cf.][80]{Cooper.2007}. Those methods do not claim to scientifically accurate, but must not be based upon stereotypes and arbitrary decisions \parencite[cf.][82-83]{Cooper.2007}. 
 
 \begin{figure}[H]
 \centering
@@ -32,10 +51,13 @@ Human brains are caring more bout individuals, than large groups \parencite[cf.]
     \label{fig:stakeMap}
 \end{figure}
 
-\paragraph{} For identification of relevant stakeholders \textcite[38]{Robier.2016} suggest the usage of a stakeholder map (cf. \Cref{fig:stakeMap}). People of the left hand side of the vertical axis are the users of the program, divided into heavy users (far left) and fist time users (narrow to the axis) \parencite[cf.][38]{Robier.2016}.
+\paragraph{} For identification of relevant stakeholders \textcite[38]{Robier.2016} suggest the usage of a stakeholder map (cf. \Cref{fig:stakeMap}). People of the left hand side of the vertical axis are the users of the program, divided into heavy users (far left) and fist time users (narrow to the axis) \parencite[cf.][38]{Robier.2016}. Stakeholders on the right hand sides do not use the system, but still influence it \parencite[cf.][38]{Robier.2016}. 
+
+\paragraph{} The vertical influence displays the influence of the stakeholder on the system. A project manager would e.g. be in the upper half, while a service desk employee would be on the bottom half, since he can only make suggestions, but no directive \parencite[cf.][38]{Robier.2016}. 
+
 \paragraph{} This approach aims not at the identification of each individual stakeholder, but at the identification of stakeholder groups to be represented by a persona \parencite[cf.][82]{Cooper.2007}, explicitly  including non-users \parencite[cf.][84]{Cooper.2007}.
 
-\paragraph{} Analysis of the personas identified, includes the specification of a personas traits. Since personas are represented as individual people \parencite[cf.][81]{Cooper.2007}, it has all attributes a natural person has, including a name, gender, age, family, education, and most importantly: a motivation \parencites[cf.][]{Platt.2016}[cf.][83-84]{Cooper.2007}. All traits of a persona must be contributing to a bigger picture, and thereby must be intentionally be set to suggest intended characteristics \parencite[cf.]{Platt.2016}. 
+\paragraph{} All traits of a persona must be contributing to a bigger picture, and thereby must be intentionally set to suggest intended characteristics \parencite[cf.]{Platt.2016}. Therefore, analysis of the identified personas, includes the specification of traits. 
 
 \paragraph{} As an example: Our persona Kevin Smith (25, male) works at a international bank as foreign trade manager after his studies in financial management at Harvard Business School and needs a way to plan his meetings in accordance to required travel times. In his free time he has a private single engine plane. If you ask yourself whether Kevin needs his schedule in a standardized time zone, such as UTC, the answer will definitely be yes, because he is on the one hand used to using UTC at work and in his hobby. 
 
@@ -53,23 +75,6 @@ Human brains are caring more bout individuals, than large groups \parencite[cf.]
 \end{figure}
 
 \paragraph{} The resulting personas are usually documented in a resume containing all relevant information \parencites[cf.][40]{Robier.2016}[cf.][]{Platt.2016}. This paper will use the template shown in \Cref{fig:persTemp}. It includes a picture of the persona, his or her personal information, his or her goals, needs, and for users his or her technological parameters.
-
-
-\subsection{Using Use Case Diagrams}
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=1]{img/SCDSymbols.pdf}
-    \caption[Symbols of System Context Diagrams]{Symbols of System Context Diagrams \parencites[77]{Lauesen.2008}}
-    \label{fig:scdSym}
-\end{figure}
-The system context diagram consists of four components: system, people, data flow, and domain boundaries \parencites[cf.][76-77]{Lauesen.2008}. Each one has its own representation, displayed in \Cref{fig:scdSym}. System context diagrams are used to identify required interfaces \parencites[cf.][75]{Lauesen.2008}, as well as to define the system boundary \parencites[cf.][75]{Ebert.2014}. It is an important overview of requirement sources, reflecting all interacting systems and persons. The direction of the arrow can show the direction of the data flow, or more commonly display the direction of intend \parencite[cf.][77]{Lauesen.2008}. In this paper the direction of an arrow will display the direction of intend.
-
-
-\section{Main Activity}
-\subsection{Sourcing Requirements from the Context}
-The information of each facet will be compiled into goals for the desired outcome and which then will be clustered into the types of requirements described in \cref{ssec:reqTypes} (cf. \Cref{fig:reqTypes} on \cpageref{fig:reqTypes}). The formulation of the goals will be done in a sentence stencil (see below) for requirement documentation. 
-
-\paragraph{} The requirements will be itemized and clarified as much as possible to that point. Afterwards, the requirements will be prioritized and potential conflicts will be resolved. The reason for the prioritization before generating consistency is, that in case of an unreasonable conflict, the priorities must be clear to know which requirement to drop.
 
 
 \subsection{Documenting the Requirements}
@@ -90,7 +95,7 @@ In order to counter these issues, this paper will use the sentence structure sug
 \subsubsection{In Diagram Notation}
 For the diagram documentation of a requirement, a fitting diagram type must be selected \textcite[299]{Pohl.2007}.  This thesis will use use models specified in the Unified Modeling Language (UML) 2.5 documentation by \textcite{ObjectManagementGroup.01.03.2015} with one exception. 
 
-\paragraph{}
+\paragraph{\label{par:useCaes}}
 Use case diagrams (see below) will be utilized for the documentation of stakeholder's goals. Secondly, this paper will use sequence diagrams, which display the chronological set of interactions, as a tool to visualize scenarios. Last but not least, use cases and scenarios will be merged into function models, which display the flow of information in the complete system and are not part of the UML Specification. 
 
 \begin{figure}[H] 
@@ -116,7 +121,7 @@ Other actors might have different, but also overlapping goals.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{img/adSymb.png}
+    \includegraphics[width=0.7\textwidth]{img/ActivitySymbols.pdf}
     \caption{Notation}\label{fig:adSymb}
 \end{figure}
 
@@ -128,11 +133,8 @@ Other actors might have different, but also overlapping goals.
     \caption{Activity Diagram Example \parencite[380]{ObjectManagementGroup.01.03.2015}}\label{fig:adEx}
 \end{figure}
 
-\paragraph{} For demonstration \Cref{fig:adEx} shows a order processing activity. After receiving the request, it is decided whether the order is rejected or accepted. 
-
-\paragraph{} If the order is accepted, the order is shipped and an invoice is sent. Once the invoice is received, and the order shipped, the order is closed. 
-
-\paragraph{} In case the order is rejected, it is closed immediately. 
+\paragraph{} For demonstration \Cref{fig:adEx} shows a order processing activity. After receiving the request, it is decided whether the order is rejected or accepted. If the order is accepted, the order is shipped and an invoice is sent. Once the invoice is received, and the order shipped, the order is closed. \\
+In case the order is rejected, it is closed immediately. 
 
 
 \paragraph{} Function models are made to display the 
