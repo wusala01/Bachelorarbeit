@@ -103,8 +103,11 @@ Requirements must be expressed distinctly, in order to ensure the system is corr
 In order to counter these issues, this paper will use the sentence structure suggested by \textcites[107]{Ebert.2014}[246]{Pohl.2007}. Sentence structures like these help to clarify and structure requirements, as log as only one requirement is represented per sentence \parencite[107]{Ebert.2014}. 
 
 
-\subsubsection{In Diagram Notation}
+\subsubsection{Diagram Notation}
 For the diagram documentation of a requirement, a fitting diagram type must be selected \textcite[299]{Pohl.2007}.  This thesis will use use models specified in the Unified Modeling Language (UML) 2.5 documentation by \textcite{ObjectManagementGroup.01.03.2015} with one exception. 
+
+
+\subsubsection{Use Case Diagram}
 
 \paragraph{\label{par:useCaes}}
 Use case diagrams (see below) will be utilized for the documentation of stakeholder's goals. Secondly, this paper will use sequence diagrams, which display the chronological set of interactions, as a tool to visualize scenarios. Last but not least, use cases and scenarios will be merged into function models, which display the flow of information in the complete system and are not part of the UML Specification. 
@@ -130,6 +133,9 @@ A use case diagram displays goals of stakeholders by abstracting stakeholders in
 \paragraph{} 
 Other actors might have different, but also overlapping goals.
 
+
+\subsubsection{Activity Diagram}
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{img/ActivitySymbols.pdf}
@@ -147,8 +153,6 @@ Other actors might have different, but also overlapping goals.
 \paragraph{} For demonstration \Cref{fig:adEx} shows a order processing activity. After receiving the request, it is decided whether the order is rejected or accepted. If the order is accepted, the order is shipped and an invoice is sent. Once the invoice is received, and the order shipped, the order is closed. \\
 In case the order is rejected, it is closed immediately. 
 
-
-\paragraph{} 
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.9]{img/fmSymb.png}
@@ -156,7 +160,10 @@ In case the order is rejected, it is closed immediately.
     \label{fig:fmSymb}
 \end{figure}
 
-\paragraph{} As mentioned above, function models will be used for solution oriented requirement modeling. Function models display the flow of data throughout the system from and to each external entity. Those are called \ssay{Terminator} \parencite[190]{Pohl.2007}. Within the system, processes and data storage are nodes of the data flow \parencite[cf.][190-191]{Pohl.2007}. The symbolic representation of those can be seen in \Cref{fig:fmSymb}.  
+
+\subsubsection{Function Diagram}
+
+As mentioned above, function models will be used for solution oriented requirement modeling. Function models display the flow of data throughout the system from and to each external entity. Those are called \ssay{Terminator} \parencite[190]{Pohl.2007}. Within the system, processes and data storage are nodes of the data flow \parencite[cf.][190-191]{Pohl.2007}. The symbolic representation of those can be seen in \Cref{fig:fmSymb}.  
 
 \begin{figure}[H]
     \centering
@@ -165,15 +172,15 @@ In case the order is rejected, it is closed immediately.
     \label{fig:fmEx}
 \end{figure}
 
-The example in \Cref{fig:fmEx} illustrates such a function diagram. In this particular example, the system of \Cref{figscEx} and \Cref{fig:adEx} is used. 
+The example in \Cref{fig:fmEx} illustrates such a function diagram. In this particular example, the system of \Cref{figscEx} and \Cref{fig:adEx} is used. Here the customer sends a \ssay{New ORder} to the system, which is processed by \ssay{Capture Order}. This extracts the \ssay{Order Information} and sends those to the \ssay{Shop Owner}. Additionally, the \ssay{Inventory List} is updated and the order is forwarded to \ssay{Create Invoice}, which sends the \ssay{Tax Information} to the \ssay{Accounting System} and \ssay{Send[s a] Invoice} to the \ssay{Customer}.
 
-\subsection{Validating Conformity}
-Scope Out
+\subsection{Conformity}
+Whenever conflicts of requirements appear during documentation, or in conception, those will be tried to resolve. 
 
 \section{Architectural Conception}
 This paper will use UML component diagrams in the alternate notation \parencite[cf.][212]{ObjectManagementGroup.01.03.2015} for architectural composition of the application. An example of a component diagram can be seen in \Cref{fig:comEx}.
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{img/componentExample.pdf}
     \caption[Component Diagram Example]{Component Diagram Example \parencites[2132]{ObjectManagementGroup.01.03.2015}}
@@ -192,25 +199,14 @@ A component in UML notation may be identified either by the keyword \ssay{<<comp
     \item Whenever a interfaces is provided to outside components, a square displays the delegation \parencite[cf.][212]{ObjectManagementGroup.01.03.2015}. In \Cref{fig:comEx} for instance, the port \ssay{OrderEntry} is originally provided by some internal logic of \ssay{:Order}, then delegated to \ssay{Store}, which provides it to other external components. 
 \end{enumerate}
 
-\section{User Interface Conception}
 
+\subsection{}{User Interface Conception with Wire Frames}
 
-\subsection{Minimalist Approach of understandable User Interfaces}
-Facing the challenges of \textit{Attention Economy}, business decision makers must explore applications at a higher speed that private users, because as stated above, spend attention implies costs of opportunity \parencite[cf.][]{Bakar.2017}. Therefore, designing a application must be done in optimization for fast knowledge transfer and easy exploration. In order to achieve this goal, \textcite{Bakar.2017} suggests a set of goals:
-\begin{enumerate}
-\item{Getting Started Fast} implies, that no unnecessary contents are disturbing the user from using the core functionality of the page by drastically removing  \say{explanatory and procedural information and let the user learn [...] through exploration} \parencite{Bakar.2017}.
-\item{Training on Real Tasks} leads the user more easily receiving information and being more restrained by the application, due to a sense of excitement.
-\item{Reading in Any Order} means the quality of the individual information to be not to have perquisite knowledge of any other page within the application.
-\item{Exploiting Prior Knowledge} can help to keep the users attention by mostly presenting new information. This is documented as being difficult to be implemented successfully \sekcite{Carroll.1987}{}{Farkas.1990}{}.
-\item{Coordinating System and Training} represents the progress of novice users in learning to work with the software. This is accomplished by keeping the users attention on the user interface and supplying constructive information.
-\item{Supporting Error Recognition and Recovery} implies strong testing of the application to determine necessary error recognition and implement sufficient information recovery.
-\item{Using the Situation} suggest providing the user many ways to explore the application in means of functionality and informational contents. Offering options for preoccupying oneself with the application amplifies the information transfer but increases the potential for errors.
-\item{Developing Optimal Training Design} pertains the correlation of the user interface design to the users needs and behaviours. 
-\item{Reasoning and Improvising} relatives the approach of exploratory interaction by offering instructions where compulsory.
-\end{enumerate}
+Wire frames are early stages of user experience (UX) prototyping \parencite[cf.][]{Rosenzweig.2015}. Those will be used in this paper for their simplicity. They are low in fidelity, which is good for testing ideas without exorbitant time and effort \parencite[cf.][]{Platt.2016}. A example can be seen in \Cref{fig:wrEx}
 
-
-\subsection{Outlining with Wire Frames}
-
-
-\subsection{Prototyping with Mock-ups}
+\begin{figure}
+    \centering
+    \includegraphics[height=.5\textheight]{img/WireFrameEx.pdf}
+    \caption{Example Wire Frame (own illustration based on \cite{Rosenzweig.2015})}
+    \label{fig:wrEx}
+\end{figure}
