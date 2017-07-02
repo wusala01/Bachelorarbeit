@@ -28,6 +28,14 @@ This thesis will start the requirement engineering as suggested by \textcite[55]
 \end{figure}
 The system context diagram consists of four components: system, people, data flow, and domain boundaries \parencites[cf.][76-77]{Lauesen.2008}. Each one has its own representation, displayed in \Cref{fig:scdSym}. System context diagrams are used to identify required interfaces \parencites[cf.][75]{Lauesen.2008}, as well as to define the system boundary \parencites[cf.][75]{Ebert.2014}. It is an important overview of requirement sources, reflecting all interacting systems and persons. The direction of the arrow can show the direction of the data flow, or more commonly display the direction of intend \parencite[cf.][77]{Lauesen.2008}. In this paper the direction of an arrow will display the direction of intend.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=.5\textheight]{img/SystemContextExample.png}
+    \caption[System Context Diagram Example]{System Context Diagram Example (own illustration)}
+    \label{fig:scEx}
+\end{figure}
+
+In \Cref{fig:scEx}, a example is displayed. It is displayed that a \ssay{Customer} shall be able to send an \ssay{Order} to the \ssay{Online Store}, which sends the \ssay{Order Info} to the \ssay{Shop Owner}, the \ssay{Tax Information} to the \ssay{Accounting Software} and the \ssay{Invoice} to the \ssay{Customer}. That is all what is regarded as inside the \ssay{Online Shop Context}. The complete interaction with the \ssay{Distributor} and the \ssay{Bank} is regarded as out of scope.
 
 \subsection{Personas \label{ssec:personas}}
 
@@ -76,10 +84,11 @@ Personas are representations of target groups as individual archetypal person \p
 
 The information of each facet will be compiled into goals for the desired outcome and which then will be clustered into the types of requirements described in \cref{ssec:reqTypes} (cf. \Cref{fig:reqTypes} on \cpageref{fig:reqTypes}). The formulation of the goals will be done in a sentence stencil (see below) for requirement documentation. 
 
-\paragraph{} The requirements will be itemized and clarified as much as possible to that point. Afterwards, the requirements will be prioritized and potential conflicts will be resolved. The reason for the prioritization before generating consistency is, that in case of an unreasonable conflict, the priorities must be clear to know which requirement to drop.
+\paragraph{} The requirements will be itemized and clarified as much as possible to that point. Afterwards, the requirements will be prioritized and potential conflicts will be resolved. The reason for the prioritization to happen before generating consistency is, that in case of an unreasonable conflict, the priorities must be clear to know which requirement to drop.
 
 
 \subsection{Documenting the Requirements}
+
 \subsubsection{In Natural Language}
 Requirements must be expressed distinctly, in order to ensure the system is correctly developed \parencites[107]{Ebert.2014}. While natural language offers great possibilities, being universaly applicable, flexible and easy to use \parencite[cf.][239]{Pohl.2007}, there are some flaws regarding the distinctiveness. Languages have the troubles of containing  ambiguity, which are fatal for distinct communication \parencite[cf.][239-243]{Pohl.2007}.
 
@@ -111,7 +120,7 @@ A use case diagram displays goals of stakeholders by abstracting stakeholders in
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.73\textwidth]{img/ucEx.png}
-    \subcaption[Use Case Diagram Example]{Use Case Diagram Example (own illustrationbased on \cite[641-644]{ObjectManagementGroup.01.03.2015})}\label{fig:ucEx}
+    \caption[Use Case Diagram Example]{Use Case Diagram Example (own illustrationbased on \cite[641-644]{ObjectManagementGroup.01.03.2015})}\label{fig:ucEx}
 \end{figure}
 
 \paragraph{} As an example (cf. \Cref{fig:ucEx}): An Automated Teller Machine (ATM) is used by the \ssay{Customer} with the goal \ssay{Perform ATM Transaction}. This can be either \ssay{Transfer}, \ssay{Withdraw}, or \ssay{Deposit} money. For \ssay{Transfer} and \ssay{Withdraw}, a authentication via \ssay{Card Identification} is included. Including a goal into another means that it must be utilized \parencite[cf.][639]{ObjectManagementGroup.01.03.2015}. 
@@ -147,6 +156,13 @@ In case the order is rejected, it is closed immediately.
     \includegraphics[scale=0.9]{img/fmSymb.png}
     \caption[Function Model Notation]{Function Model Notation (own illustration based on \cite[190]{Pohl.2007})}
     \label{fig:fmSymb}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{img/fmEx.png}
+    \caption[Function Model Example]{Function Model Example (own illustration)}
+    \label{fig:fmEx}
 \end{figure}
 
 
