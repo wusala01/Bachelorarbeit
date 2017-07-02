@@ -107,22 +107,26 @@ A use case diagram displays goals of stakeholders by abstracting stakeholders in
     \subcaption[Use Case Diagram Example]{Use Case Diagram Example (own illustrationbased on \cite[641-644]{ObjectManagementGroup.01.03.2015})}\label{fig:ucEx}
 \end{figure}
 
-\paragraph{} As an example (cf. \Cref{fig:ucEx}): An Automated Teller Machine (ATM) is used by the customer with the goal of performing an ATM Transaction, which can specify in either a money transfer, withdraw or deposit. For transfer and withdraw, a authentication via card is required. If the user runs into trouble, ATM Transactions all have a extension point (which in this case most likely would be a button) to receive help. This is regarded as a extension of the goal, as the user does not have to make demands on getting helped.
+\paragraph{} As an example (cf. \Cref{fig:ucEx}): An Automated Teller Machine (ATM) is used by the \ssay{Customer} with the goal \ssay{Perform ATM Transaction}. This can be either \ssay{Transfer}, \ssay{Withdraw}, or \ssay{Deposit} money. For \ssay{Transfer} and \ssay{Withdraw}, a authentication via \ssay{Card Identification} is included. Including a goal into another means that it must be utilized \parencite[cf.][639]{ObjectManagementGroup.01.03.2015}. 
+
+\paragraph{} If the \ssay{Customer} requires help \ssay{Perform[ing a] ATM Transaction}, the system offers a \ssay{Selection} with the option \ssay{HELP}. This is regarded as a extension of the goal, as the user does not have to make demands on getting helped \parencite[cf.][638-639]{ObjectManagementGroup.01.03.2015}.
+
+\paragraph{} 
+Other actors might have completely different goals, when using the ATM, like the Administrator
 
 \paragraph{} As seen in \Cref{fig:ucEx}, the goals do not have to be connected directly to the actor. They might be included in a different goal (e.g. the closet) or may extend other use cases under certain conditions (e.g. ironing equippment).
 
-\begin{figure}[H] 
-    \begin{minipage}[m]{.5\linewidth}
-        \centering
-        \includegraphics[width=0.7\textwidth]{img/adSymb.png}
-        \subcaption{Notation}\label{fig:adSymb}
-    \end{minipage}%
-    \begin{minipage}[m]{.5\linewidth}
-        \centering
-        \includegraphics[width=0.9\textwidth]{img/activityDiagram.png}
-        \subcaption{Example}\label{fig:adEx}
-    \end{minipage}
-    \caption[Activity Diagram Notation and Example]{Activity Diagram (a: based on \cite[160]{Pohl.2007}; b: own illustrations)}\label{fig:adEx}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img/adSymb.png}
+    \subcaption{Notation}\label{fig:adSymb}
+\end{figure}
+
+\begin{figure}[H] ]{.5\linewidth}
+    \centering
+    \includegraphics[width=0.9\textwidth]{img/activityDiagram.png}
+    \caption{Activity Diagram Example \parencite[380]{ObjectManagementGroup.01.03.2015}}\label{fig:adEx}
 \end{figure}
 
 \paragraph{} The activity diagram, on the other hand, expresses a chronological order of activities done by certain entities (system, user, etc.). Those diagrams have one start point and at least to end points, as well as activities, which are connected by control flow lines (cf. \Cref{fig:adSymb}).
