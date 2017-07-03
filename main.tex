@@ -7,11 +7,7 @@
 \usepackage{graphicx}
 \usepackage{titling}
 \usepackage{fontspec}
-\setmainfont[%
-    BoldFont={Bitter-Bold.ttf},%
-    ItalicFont={Bitter-Italic.ttf},%
-    Ligatures=TeX%
-    ]{Bitter-Regular.ttf}
+
 \usepackage[%
     left=2.cm,%
     right=3cm,%
@@ -51,6 +47,23 @@
 \newcounter{savepage}
 \newcounter{appcount}
 \setcounter{appcount}{1}
+
+\newcommand{\setttf}[3]{
+\setromanfont[%
+    BoldFont={#1},%
+    ItalicFont={#2},%
+    ]{#3}
+\setsansfont[%
+    BoldFont={#1},%
+    ItalicFont={#2},%
+    ]{#3}
+\setmonofont[%
+    BoldFont={#1},%
+    ItalicFont={#2},%
+    ]{#3}
+}
+
+\setttf{Bitter-Bold.ttf}{Bitter-Italic.ttf}{Bitter-Regular.ttf}
 
 \makeatletter
 \newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
