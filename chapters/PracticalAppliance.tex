@@ -29,7 +29,7 @@ Constraining the development of the application, the sponsor requested that the 
 \end{closeItem}
 
 \subsection{Organizational Standards}
-Subsequent to \textbf{I4}, IBM has a organizational standard for authentication on application, which are also available online: the so-called w3ID-Login \parencite[cf.][]{IBMCorporation.2016}.
+Subsequent to \textbf{I4}, IBM has a organizational standard for authentication on application, which are also available online: the so-called w3ID-Log in \parencite[cf.][]{IBMCorporation.2016}.
 
 \begin{closeItem}
     \item [\textbf{I4.1}] When a user wants to identify as an IBM opportunity owner, the system shall utilize w3ID for authentication.
@@ -114,6 +114,10 @@ In reference to the specialties of B2B marketing mentioned on \cpageref{}, the c
 Regarding the professional context of a bank, it becomes clear that two of their stakeholder are of special importance: Firstly, the stock brokers require tax statements by the bank, which are critical for the banks clients annual tax declaration. Secondly, the \ssay{Bundesanstalt für 
 Finanzdienstleistungsaufsicht} (BaFin), the German institute for financial supervision, requires notes on a regular basis from the bank.
 
+\begin{closeItem}
+    \item [\textbf{I9}] When information is collected for the application, the creators should not forget the regular notes to the BaFin.
+    \item [\textbf{I10}] When information is collected for the application, the creators should not forget about stock trading tax issues.
+\end{closeItem}
 
 \vspace{2em}
 
@@ -137,24 +141,67 @@ Finanzdienstleistungsaufsicht} (BaFin), the German institute for financial super
     \item IBM Corporation
     \columnbreak
     \NoIndent{\textbf{Stakeholders of the customer:}}
-    \item BaFin !
+    \item BaFin
     \item stock broker
     \item core banking customers
 \end{closeItemCol}
 
-\paragraph{}
+\subsubsection{Stakeholder Maps}
 For translation into stakeholder maps as described in \Cref{} on \cpageref{}, the stakeholders must be ordered by intensity of usage, and by influence on the service. Each from the perspective of the service. Therefore the stakeholders of IBM will be ordered by the usage and influence of the desired marketing app, and the customer's stakeholders by the usage of and influence on the banking service.
 
 \paragraph{}
 Ordering the IBM's stakeholders by usage is pretty straight foreword: The IBM opportunity owners will be the most frequent users, because they will use the application frequently to allow customer access. All customer roles will be using the application for a single approximately two week time period what makes them irregular users.
-The developer and IBM Corporation will not be users of the application, one only accessing the application for test reasons, the other being a non-human entity. 
+The developer and IBM Corporation will not be users of the application, one only accessing the application for test reasons, the other executing only regulatory authority. 
 
 \paragraph{} More carefully, the order of influence must be generated, since the term influence can be ambiguous: On the one hand, it could mean the influence on the app development - which is the correct interpretation (cf. \Cref{}) -, on the other hand, the influence on the buying decision of the customer might be of interest.
 
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=.5\textheight]{img/smMarketingApp.pdf}
+    \caption[Stakeholder Map of IBM Marketing Application]{Stakeholder Map of IBM Marketing Application (own illustration)}
+    \label{fig:smIBM}
+\end{figure}
+
+As to be seen in \Cref{fig:smIBM} the order in influence was decided to be in the following order: The sponsor being most influential, since he is supervising the application life cycle from the conception via development to deployment and can empower influence at any time. Secondly, the developer has got great impact on the application, because his skills and commitment shape the application. Thirdly, the IBM Cooperation influences the application by requiring certain development and style guidelines. At fourth position come the opportunity owner, which do not directly influence the application, but may supply feedback or ideas during the development process. Least influential are the customer employees deciding over the purchase. They have no impact what so ever over the application. 
+
+\paragraph{} Regarding the customer's needs and pain points, a look at their stakeholder map can be taken:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=.5\textheight]{img/smBank.pdf}
+    \caption[Curate Bank Stakeholder Map]{Curate Bank Stakeholder Map (own illustration)}
+    \label{fig:my_label}
+\end{figure}
+
+Regarded most influential, the BaFin is not using the banking service. This is certainly false for at least one bank since they have to transfer money as well as any other entity of the market. On the other hand, the BaFin will most certainly not have bank accounts at a major part of the banks operating in Germany. Second most influential are B2B stock trading customers. B2B customer do have more individual terms and conditions with the banks and can thereby make a huger impact on the bank's services. Stock trading customers do have a higher influence level due to the broader interaction with the bank. Therefore, the private customers rank fourth (stock trading) and fifth (core banking only).
+
+\paragraph{} In terms of usage, stock brokers will be most likely to use the banking service more often, because they have more to do. Professionals will use the bank service more frequently than private individuals, because most companies turn over more money than companies. 
+
+\subsubsection{Personas}
+The complete set of personas can be seen in the appendix (cf. \cpagerefrange{}{}). As an exemplary case, follows the persona of Patrick Maurer, who is a procurement manager at a bank in Frankfurt. He is kind of a diligent and wary once it comes to marketing presentations. This is because as a procurement manager, he is being held responsible, if what he ordered was not what it promised to be. 
+
+\begin{figure}
+    \centering
+    \includegraphics[]{}
+    \caption[]{}
+    \label{fig:}
+\end{figure}
+
+He would use the application, if it gave him quick insights into the suppliers skills. What he refuses to take a look into are marketing phrases, which contain no controllable information or arbitrary facts, anyone can find out without deeper knowledge of the banking industry. As requirements for the system, he uses a PC running Windows 7 for work and browses the web with the pre-installed Internet Explorer. Since his company checks every Update by Microsoft for Bug before delivering them to the employees, he is sometimes not on the newest Version of the Software. He does not use a smart phone, but a classic cellphone.
+
+The personal traits were results of past experience of the author. The reasons Patrick gained the technical traits, was to fulfill the overall statistics, as follows:
+\begin{enumerate}
+    \item \textcite{StatCounter.2017} measured every tenth desktop user on the web uses Internet Explorer and 39\% used Windows 7. 
+    \item In recent occasions it became clear that corporate IT-Infrastructure is updated by complicated procedures, which try to ensure compatibility, but delay update delivery drastically \parencites{Gierow.2017}{Zivadinovic.13.05.2017}.
+\end{enumerate}
 
 \subsection{Existing System Information}
- a OAuth2.0 \parencite[cf.][]{InternetEngineeringTaskForce.2012} based authentication procedure .
+As mentioned earlier, IBM require w3ID-Log in for employees, which is a OAuth2.0 \parencite[cf.][]{InternetEngineeringTaskForce.2012} based authentication procedure. This has to be fulfilled in order to have  usable product. 
+\begin{closeItem}
+    \item [
+\end{closeItem}
+\paragraph{}
 
 \section{System Context Definition}
 \subsection{Entities}
