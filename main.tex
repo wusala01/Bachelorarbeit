@@ -7,9 +7,24 @@
 \usepackage{graphicx}
 \usepackage{titling}
 \usepackage{fontspec}
-\setmainfont[Ligatures=TeX]{Bitter-Regular.ttf}
-\usepackage[left=2.cm,right=3cm,top=2cm,bottom=2cm]{geometry}
-\usepackage[style=authoryear,maxcitenames=2, backend=biber,showmedium=true,useprefix=false]{biblatex}
+\setmainfont[%
+    BoldFont={Bitter-Bold.ttf},%
+    ItalicFont={Bitter-Italic.ttf},%
+    Ligatures=TeX%
+    ]{Bitter-Regular.ttf}
+\usepackage[%
+    left=2.cm,%
+    right=3cm,%
+    top=2cm,%
+    bottom=2cm%
+    ]{geometry}
+\usepackage[%
+    style=authoryear,%
+    maxcitenames=2,%
+    backend=biber,%
+    showmedium=true,%
+    useprefix=false%
+    ]{biblatex}
 \usepackage{acronym}
 \usepackage[T1]{fontenc}
 \usepackage{titlesec, blindtext, color}
