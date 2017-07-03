@@ -32,6 +32,18 @@
 }
 
 \newcounter{savepage}
+\newcounter{appcount}
+\setcounter{appcount}{1}
+
+\makeatletter
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
+\newcommand{\newapp}[1]{%
+    \addcontentsline{toc}{section}{Appendix \rom{\theappcount}: #1}
+    \section*{Appendix \rom{\theappcount}: #1 \label{sec:app\theappcount}}
+    \addtocounter{appcount}{1}
+}
 
 \renewcommand{\baselinestretch}{1.5}
 \titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter \hspace{20pt} }{0pt}{\Huge\bfseries}
@@ -79,6 +91,8 @@
 
 \addcontentsline{toc}{section}{Abstract}
 \chapter*{Abstract}
+
+\Cref{sec:app1}
 
 \addcontentsline{toc}{section}{Contents}
 \tableofcontents
@@ -176,6 +190,10 @@
 \begin{appendix}
 \renewcommand\thechapter{\Alph{chapter}}
 \input{appendix/appendix1.tex}
+\input{appendix/appendix2.tex}
+\input{appendix/appendix3.tex}
+\input{appendix/appendix4.tex}
+\input{appendix/appendix5.tex}
 \end{appendix}
 
 \addcontentsline{toc}{chapter}{Declaration of Authorship}
@@ -184,6 +202,6 @@ I hereby declare that I wrote my Bachelothesis about \say{\thetitle} originally 
 
 \paragraph*{}
 \vspace{.2in}
-\makebox[2.5in]{\hrulefill}\par
-Nick London
+Mannheim, \makebox[1.8in]{\hrulefill}\hfill{}\makebox[2.5in]{\hrulefill}\par
+\hfill{}Nick London
 \end{document}
