@@ -14,11 +14,13 @@
 \usepackage[T1]{fontenc}
 \usepackage{titlesec, blindtext, color}
 \usepackage{float}
+\usepackage{caption}
 \usepackage{subcaption}
 \usepackage{hyperref}
 \usepackage{cleveref}
 \usepackage{array}
 \usepackage{lipsum}
+\usepackage{multicol}
 \hypersetup{
     colorlinks,
     citecolor=black,
@@ -40,8 +42,8 @@
 \makeatother
 
 \newcommand{\newapp}[1]{%
-    \addcontentsline{toc}{section}{Appendix \rom{\theappcount}: #1}
-    \section*{Appendix \rom{\theappcount}: #1 \label{sec:app\theappcount}}
+    \addcontentsline{toc}{section}{\protect\numberline{\rom{\theappcount}} #1}
+    \section*{Appendix \rom{\theappcount}: #1 \label{app:\theappcount}}
     \addtocounter{appcount}{1}
 }
 
@@ -51,6 +53,8 @@
 \newcommand{\ssay}[1]{%
     \mbox{\say{#1}}%
 }
+
+\raggedcolumns
 
 \bibliography{bibliography}
 
@@ -92,7 +96,7 @@
 \addcontentsline{toc}{section}{Abstract}
 \chapter*{Abstract}
 
-\Cref{sec:app1}
+\Cref{app:4}
 
 \addcontentsline{toc}{section}{Contents}
 \tableofcontents
@@ -189,6 +193,7 @@
 \chaptermark{Appendix}
 \begin{appendix}
 \renewcommand\thechapter{\Alph{chapter}}
+\renewcommand\thesection{Appendix \rom{section}}
 \input{appendix/appendix1.tex}
 \input{appendix/appendix2.tex}
 \input{appendix/appendix3.tex}
