@@ -1,5 +1,5 @@
 \chapter{Practical Appliance}
-As described in the previous chapter, this one will walk through the requirement engineering process for a B2B marketing application. A label based on a capital letter and a hierarchical number will be used for itemized information (I), requirements (R) (e.g. \ssay{I3.2.3}).
+As described in the previous chapter, this one will walk through the requirement engineering process for a B2B marketing application. A label based on a capital letter and a hierarchical number will be used for itemized \mbox{information (\textbf{I})}, \mbox{requirements (\textbf{R})} (e.g. \ssay{\textbf{I3.2.3}}).
 \section{Input information}
 \subsection{The Sponsor}
 The sponsor, he explained, that he would like to have an application or website, which he "can give to a customer to play around with and get to know the skills of IBM" \parencite{Sachs.20.04.2017b}. As a legacy from times when IBM was mainly a mainframe hardware supplier, IBM is perceived with its past skill , he further points out \parencite{Sachs.20.04.2017b}. Therefore the app must arouse the interest of the potential customer and display that IBM has experience, knowledge and skills in the domain of banking software migration. 
@@ -19,17 +19,17 @@ Constraining the development of the application, the sponsor requested that the 
     \item [\textbf{I2}] When a customer tries to use the site, the system shall request some kind of authentication.
     \item [\textbf{I2.1}] When customer access rights age two weeks without being extended, the system shall revoke the access rights.
     \item [\textbf{I2.2}\label{R2.2}] When a user is an opportunity owner of IBM the application, the system shall provide the user with the ability to extend customer access rights.
-    \item [3] The system shall superficially appear like a mobile online banking application.
+    \item [\textbf{I3}] The system shall superficially appear like a mobile online banking application.
 \end{closeItem}
 
-\paragraph{} It is implied by I2.2, that IBM opportunity owner must be able to log into the system in a way that proves their employment status at IBM. This causes a new Requirement:
+\paragraph{} It is implied by \textbf{I2.2}, that IBM opportunity owner must be able to log into the system in a way that proves their employment status at IBM. This causes a new Requirement:
 
 \begin{closeItem}
     \item [\textbf{I4}] When the system is accessed, it shall provide IBM opportunity owners the ability to log in with their corporate identity.
 \end{closeItem}
 
 \subsection{Organizational Standards}
-Subsequent to I4, IBM has a organizational standard for authentication on application, which are also available online: the so-called w3ID-Login \parencite[cf.][]{IBMCorporation.2016}.
+Subsequent to \textbf{I4}, IBM has a organizational standard for authentication on application, which are also available online: the so-called w3ID-Login \parencite[cf.][]{IBMCorporation.2016}.
 
 \begin{closeItem}
     \item [\textbf{I4.1}] When a user wants to identify as an IBM opportunity owner, the system shall utilize w3ID for authentication.
@@ -54,14 +54,14 @@ No proof could be found for any regulation concerning the functionality of the a
 The domain of B2B marketing is described in \Cref{} on \cpagerefrange{}{}. Important conclusions are: 
 
 \begin{closeItem}
-    \item [I6] When creating the stakeholder map, the requirements engineer shall integrate the customer's stakeholders.
-    \item [I7] When a B2B customer is approached, the communication should address to his or her individual case.
+    \item [\textbf{I6}] When creating the stakeholder map, the requirements engineer shall integrate the customer's stakeholders.
+    \item [\textbf{I7}] When a B2B customer is approached, the communication should address to his or her individual case.
 \end{closeItem}
 
 Since the principle of attention economy suggests that attention of users may be lost quickly due to other factors (cf. \Cref{}):
 
 \begin{closeItem}
-    \item [I8] When a customer stops using the application, the application should be able to retrieve his or her attention.
+    \item [\textbf{I8}] When a customer stops using the application, the application should be able to retrieve his or her attention.
 \end{closeItem}
 
 \paragraph{}
@@ -70,11 +70,11 @@ Since the principle of attention economy suggests that attention of users may be
 As described earlier, in order to identify stakeholder need, the stakeholders must be identified. Firstly, all stakeholder which were directly mentioned to this point can be identified:
 
 \begin{closeItemCol}
-    \item customer (I1)
+    \item customer (\textbf{I1})
     \item sponsor
-    \item IBM opportunity owner (I2.2)
+    \item IBM opportunity owner (\textbf{I2.2})
     \item IBM Corporation
-    \item developer (I5)
+    \item developer (\textbf{I5})
 \end{closeItemCol}
 
 The sponsor and IBM corporation are not tracked back, since they are the basic setting for the research.
@@ -84,7 +84,7 @@ The sponsor and IBM corporation are not tracked back, since they are the basic s
 \paragraph{} This leads to the \ssay{customer} to be subdivided. The sponsor, the opportunity owner and the contributor can all be classified as IBM employee.
 
 \begin{closeItemCol}
-    \item customer (I1)
+    \item customer (\textbf{I1})
     \begin{itemize}
         \item procurement officer
         \item operational manager
@@ -96,8 +96,8 @@ The sponsor and IBM corporation are not tracked back, since they are the basic s
     \item IBM employee 
     \begin{itemize}
         \item sponsor
-        \item developer (I5)
-        \item opportunity owner (I2.2)
+        \item developer (\textbf{I5})
+        \item opportunity owner (\textbf{I2.2})
     \end{itemize}
     \item IBM Corporation
 \end{closeItemCol}
@@ -119,8 +119,8 @@ Finanzdienstleistungsaufsicht} (BaFin), the German institute for financial super
 
 
 \begin{closeItemCol}
-    \NoIndent{\underline{IBM's stakeholders:}}
-    \item customer (I1)
+    \NoIndent{\textbf{IBM's stakeholders:}}
+    \item customer (\textbf{I1})
     \begin{itemize}
         \item procurement officer
         \item operational manager
@@ -131,12 +131,12 @@ Finanzdienstleistungsaufsicht} (BaFin), the German institute for financial super
     \item IBM employee 
     \begin{itemize}
         \item sponsor
-        \item developer (I5)
-        \item opportunity owner (I2.2)
+        \item developer (\textbf{I5})
+        \item opportunity owner (\textbf{I2.2})
     \end{itemize}
     \item IBM Corporation
     \columnbreak
-    \NoIndent{\underline{Stakeholders of the customer:}}
+    \NoIndent{\textbf{Stakeholders of the customer:}}
     \item BaFin !
     \item stock broker
     \item core banking customers
@@ -151,7 +151,7 @@ The developer and IBM Corporation will not be users of the application, one only
 
 \paragraph{} More carefully, the order of influence must be generated, since the term influence can be ambiguous: On the one hand, it could mean the influence on the app development - which is the correct interpretation (cf. \Cref{}) -, on the other hand, the influence on the buying decision of the customer might be of interest.
 
-\paragraph{} Due to identify, which stakeholder has how much influence on the development of the application, the scope of development must be clarified.
+
 
 \subsection{Existing System Information}
  a OAuth2.0 \parencite[cf.][]{InternetEngineeringTaskForce.2012} based authentication procedure .
