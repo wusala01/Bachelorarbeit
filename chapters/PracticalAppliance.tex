@@ -1,90 +1,89 @@
 \chapter{Practical Appliance}
-As described in the previous chapter, this chapter will walk through the requirement engineering process for a B2B marketing application. For better understanding, itemized information (I), requirements (R) will be labeled with letter and a hierarchical numeric identifier (e.g. \ssay{I3.2.3}).
+As described in the previous chapter, this one will walk through the requirement engineering process for a B2B marketing application. A label based on a capital letter and a hierarchical number will be used for itemized information (I), requirements (R) (e.g. \ssay{I3.2.3}).
 \section{Input information}
 \subsection{The Sponsor}
-Starting with the sponsor, he explained, that he would like to have an application or website, which he "can give to a customer to play around with and get to know the skills of IBM" \parencite{Sachs.20.04.2017b}. Further he explained, that in a tendering procedure, IBM is perceived with its past skill as a mainframe supplier \parencite{Sachs.20.04.2017b}. Therefore the app must arouse the interest of the potential customer and display that IBM has experience, knowledge and skills in the domain. 
+The sponsor, he explained, that he would like to have an application or website, which he "can give to a customer to play around with and get to know the skills of IBM" \parencite{Sachs.20.04.2017b}. As a legacy from times when IBM was mainly a mainframe hardware supplier, IBM is perceived with its past skill , he further points out \parencite{Sachs.20.04.2017b}. Therefore the app must arouse the interest of the potential customer and display that IBM has experience, knowledge and skills in the domain of banking software migration. 
 
-\paragraph{} As a condition for access by the potential customer, the sponsor required some kind of authentication, which would lock the customer out if the access is not extended by an IBM employee after two weeks time.
+\paragraph{} As a condition for access by the potential customer, the sponsor required some kind of authentication, which would lock the customer out after two weeks time, if the access is not extended by an IBM opportunity owner.
+
+\paragraph{} 'Opportunity owner' in this thesis refers to the responsible employee for a opportunity to sell IBM services.
 
 \paragraph{} As a visual appearance, the sponsor demanded a stereotypical generalized online banking application.
 
+Constraining the development of the application, the sponsor requested that the application will not generate costs when not in use, is developed by corporate student in their three month practical - as it is common at IBM - and will be developed in iterative development cycles. This approach is requested to ensure usable products after the three month term.
+
 \paragraph{} Summarized:
 
-\begin{itemize}
+\begin{closeItem}
     \item [\textbf{I1}] When a customer uses the application, the system shall provide him with the ability to receive information about IBM skills.
     \item [\textbf{I2}] When a customer tries to use the site, the system shall request some kind of authentication.
     \item [\textbf{I2.1}] When customer access rights age two weeks without being extended, the system shall revoke the access rights.
-    \item [\textbf{I2.2}\label{R2.2}] When a user is an employee of IBM the application, the system shall provide the user with the ability to extend customer access rights.
+    \item [\textbf{I2.2}\label{R2.2}] When a user is an opportunity owner of IBM the application, the system shall provide the user with the ability to extend customer access rights.
     \item [3] The system shall superficially appear like a mobile online banking application.
-\end{itemize}
+\end{closeItem}
 
-\paragraph{} Implied by I2.2, that IBM employees must be able to log into the system in a way that proves their connection to IBM. This causes a new Requirement:
+\paragraph{} It is implied by I2.2, that IBM opportunity owner must be able to log into the system in a way that proves their employment status at IBM. This causes a new Requirement:
 
-\begin{itemize}
-    \item [\textbf{I4}] When the system is accessed, the system shall provide IBM employees the ability to log in with their corporate identity.
-\end{itemize}
+\begin{closeItem}
+    \item [\textbf{I4}] When the system is accessed, it shall provide IBM opportunity owners the ability to log in with their corporate identity.
+\end{closeItem}
 
 \subsection{Organizational Standards}
-Subsequent to I4, IBM has a organizational standard for authentication on application, which are also available online: the so-called w3ID-Login, a OAuth2.0 \parencite[cf.][]{InternetEngineeringTaskForce.2012} based authentication procedure \parencite[cf.][]{IBMCorporation.2016}.
+Subsequent to I4, IBM has a organizational standard for authentication on application, which are also available online: the so-called w3ID-Login \parencite[cf.][]{IBMCorporation.2016}.
 
-\begin{itemize}
-    \item [\textbf{I4.1}] When a user wants to identify as an IBM employee, the system shall forward the user to the w3ID site in accordance to the OAuth2.0 specification.
-\end{itemize}
+\begin{closeItem}
+    \item [\textbf{I4.1}] When a user wants to identify as an IBM opportunity owner, the system shall utilize w3ID for authentication.
+\end{closeItem}
 
 \paragraph{} In addition to authentication procedures, IBM requires all applications to follow a set of rules:
 
-\paragraph{} The development must follow the 'MobileFirst'-idea, of applicable. This is explained as acting on the principle to develop everything for mobile devices first. That of course only applies only on applications intended for use on mobile devices.
+\paragraph{} The development must follow the 'MobileFirst'-idea, if applicable \parencite[cf.][]{IBMCorporation.2016}. This is explained as acting on the principle to develop everything for mobile devices first. That of course only applies only on applications intended for use on mobile devices.
 
-\paragraph{} Mobile device in this context references to small screen devices with no keyboard \parencite[cf.][]{Duong.2014}. Afterwards the design and functionality may be extended to larger devices with more peripheral devices (mouse, keyboard, etc.)
+\paragraph{} Mobile device referes to small screen devices with no keyboard in this context \parencite[cf.][]{Duong.2014}. Afterwards the design and functionality may be extended to larger devices with more peripheral devices (mouse, keyboard, etc.) and larger screens.
 
 \paragraph{} The application, to this point, do not show any reason to not be available on mobile device, therefore:
 
-\begin{itemize}
+\begin{closeItem}
     \item [\textbf{I5}] When a developer does work for the system, the developer should do the work for mobile devices prioritized.
-\end{itemize}
+\end{closeItem}
 
 \subsection{Regulations}
-No proof could be found for any regulation concerning the application. To this point, it will not collect any information, display any personal information, export US-American intellectual property or show any other regulation related behaviour. On the other hand, this research must be done exhaustively by a legal expert, which was not available for this research.
+No proof could be found for any regulation concerning the functionality of the application. To this point, it will not collect any information, display any personal information, export US-American intellectual property or show any other regulation related behaviour. On the other hand, this research must be done exhaustively by a legal expert, which was not available for this research.
 
 \subsection{Domain Information}
 The domain of B2B marketing is described in \Cref{} on \cpagerefrange{}{}. Important conclusions are: 
 
-\begin{itemize}
-    \item [I6] When creating the stakeholder map, the requirements engineer shall integrate the customer's customer.
+\begin{closeItem}
+    \item [I6] When creating the stakeholder map, the requirements engineer shall integrate the customer's stakeholders.
     \item [I7] When a B2B customer is approached, the communication should address to his or her individual case.
-\end{itemize}
+\end{closeItem}
 
 Since the principle of attention economy suggests that attention of users may be lost quickly due to other factors (cf. \Cref{}):
 
-\begin{itemize}
+\begin{closeItem}
     \item [I8] When a customer stops using the application, the application should be able to retrieve his or her attention.
-\end{itemize}
+\end{closeItem}
 
 \paragraph{}
 
 \subsection{Stakeholder Needs}
-As described earlier, in order to identify stakeholder need, the stakeholders must be identified. As suggested in \Cref{} (cf. \cpagerefrange{}{}) this problem will be tackled using a stakeholder map. 
+As described earlier, in order to identify stakeholder need, the stakeholders must be identified. Firstly, all stakeholder which were directly mentioned to this point can be identified:
 
-Firstly, all stakeholder which were directly mentioned to this point can be identified:
-
-\begin{multicols}{3}
-\begin{itemize}
+\begin{closeItemCol}
     \item customer (I1)
     \item sponsor
-    \item IBM employee (I2.2)
+    \item IBM opportunity owner (I2.2)
     \item IBM Corporation
     \item developer (I5)
-\end{itemize}
-\end{multicols}
+\end{closeItemCol}
 
 The sponsor and IBM corporation are not tracked back, since they are the basic setting for the research.
 
 \paragraph{} These stakeholders are pretty vague. Who is the \ssay{customer}. Deriving from the sponsors information, that the application should be handed to the customer during a bidding procedure as result of a call for proposal, the author deduces based on past experience that the \ssay{customer} can either be the procurement of the calling company, the future steering committee of the to-be project naming the management of the demanding company. 
 
-\paragraph{} This leads to the \ssay{customer} to be subdivided. The sponsor and the contributor can both be classified as IBM employee.
+\paragraph{} This leads to the \ssay{customer} to be subdivided. The sponsor, the opportunity owner and the contributor can all be classified as IBM employee.
 
-\begin{multicols}{2}
-\begin{itemize}
+\begin{closeItemCol}
     \item customer (I1)
     \begin{itemize}
         \item procurement officer
@@ -94,14 +93,14 @@ The sponsor and IBM corporation are not tracked back, since they are the basic s
         \item finance representative
     \end{itemize} \columnbreak
     
-    \item IBM employee (I2.2)
+    \item IBM employee 
     \begin{itemize}
         \item sponsor
         \item developer (I5)
+        \item opportunity owner (I2.2)
     \end{itemize}
     \item IBM Corporation
-\end{itemize}
-\end{multicols}
+\end{closeItemCol}
 
 In reference to the specialties of B2B marketing mentioned on \cpageref{}, the customer demand for service is only derived from their customer demands. Therefore, these customers have to be included as well. 
 
@@ -111,35 +110,16 @@ In reference to the specialties of B2B marketing mentioned on \cpageref{}, the c
 
 \paragraph{} For simplicity, we regard consumers and companies as equal as long as the diversity does not have an impact.
 
-\begin{multicols}{2}
-\begin{itemize}
-    \item customer (I1)
-    \begin{itemize}
-        \item procurement officer
-        \item operational manager
-        \item IT department representative
-        \item legal and compliance advisor
-        \item finance representative
-    \end{itemize} \columnbreak
-    \item level 2 customers
-    \begin{itemize}
-        \item core banking customers
-        \item stock broker
-    \end{itemize}
-    \item IBM employee (I2.2)
-    \begin{itemize}
-        \item sponsor
-        \item developer (I5)
-    \end{itemize}
-    \item IBM Corporation
-\end{itemize}
-\end{multicols}
-
+\paragraph{}
 Regarding the professional context of a bank, it becomes clear that two of their stakeholder are of special importance: Firstly, the stock brokers require tax statements by the bank, which are critical for the banks clients annual tax declaration. Secondly, the \ssay{Bundesanstalt für 
 Finanzdienstleistungsaufsicht} (BaFin), the German institute for financial supervision, requires notes on a regular basis from the bank.
 
-\begin{multicols}{2}
-\begin{itemize}
+
+\vspace{2em}
+
+
+\begin{closeItemCol}
+    \NoIndent{\underline{IBM's stakeholders:}}
     \item customer (I1)
     \begin{itemize}
         \item procurement officer
@@ -147,27 +127,34 @@ Finanzdienstleistungsaufsicht} (BaFin), the German institute for financial super
         \item IT department representative
         \item legal and compliance advisor
         \item finance representative
-    \end{itemize} \columnbreak
-    \item level 2 stakeholder
-    \begin{itemize}
-        \item BaFin !
-        \item stock broker
-        \item core banking customers
     \end{itemize}
-    \item IBM employee (I2.2)
+    \item IBM employee 
     \begin{itemize}
         \item sponsor
         \item developer (I5)
+        \item opportunity owner (I2.2)
     \end{itemize}
     \item IBM Corporation
-\end{itemize}
-\end{multicols}
+    \columnbreak
+    \NoIndent{\underline{Stakeholders of the customer:}}
+    \item BaFin !
+    \item stock broker
+    \item core banking customers
+\end{closeItemCol}
 
-Classifying those by users and non-users, following classification turns out:
+\paragraph{}
+For translation into stakeholder maps as described in \Cref{} on \cpageref{}, the stakeholders must be ordered by intensity of usage, and by influence on the service. Each from the perspective of the service. Therefore the stakeholders of IBM will be ordered by the usage and influence of the desired marketing app, and the customer's stakeholders by the usage of and influence on the banking service.
 
+\paragraph{}
+Ordering the IBM's stakeholders by usage is pretty straight foreword: The IBM opportunity owners will be the most frequent users, because they will use the application frequently to allow customer access. All customer roles will be using the application for a single approximately two week time period what makes them irregular users.
+The developer and IBM Corporation will not be users of the application, one only accessing the application for test reasons, the other being a non-human entity. 
+
+\paragraph{} More carefully, the order of influence must be generated, since the term influence can be ambiguous: On the one hand, it could mean the influence on the app development - which is the correct interpretation (cf. \Cref{}) -, on the other hand, the influence on the buying decision of the customer might be of interest.
+
+\paragraph{} Due to identify, which stakeholder has how much influence on the development of the application, the scope of development must be clarified.
 
 \subsection{Existing System Information}
-
+ a OAuth2.0 \parencite[cf.][]{InternetEngineeringTaskForce.2012} based authentication procedure .
 
 \section{System Context Definition}
 \subsection{Entities}

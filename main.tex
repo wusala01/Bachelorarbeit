@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper,final,oneside,openright,onecolumn,titlepage]{scrbook}
+\documentclass[12pt,a4paper,oneside,openright,onecolumn,titlepage]{scrbook}
 
 \usepackage[utf8]{inputenc}
 \usepackage{csquotes}
@@ -52,6 +52,27 @@
 
 \newcommand{\ssay}[1]{%
     \mbox{\say{#1}}%
+}
+
+\newcommand\NoIndent[1]{%
+  \par\vbox{\parbox[t]{\linewidth}{#1}}%
+}
+
+\newenvironment{closeItem}{%
+    \vbox\bgroup%
+    \begin{itemize}
+}{
+    \end{itemize}
+    \egroup
+}
+\newenvironment{closeItemCol}{%
+    \vbox\bgroup%
+    \begin{multicols*}{2}
+    \begin{itemize}
+}{
+    \end{itemize}
+    \end{multicols*}
+    \egroup
 }
 
 \raggedcolumns
