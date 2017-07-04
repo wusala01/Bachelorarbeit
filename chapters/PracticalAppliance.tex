@@ -2,7 +2,7 @@
 As described in the previous chapter, this one will walk through the requirement engineering process for a B2B marketing application. A label based on a capital letter and a hierarchical number will be used for itemized \mbox{information (\textbf{I})}, \mbox{requirements (\textbf{R})} (e.g. \ssay{\textbf{I3.2.3}}).
 \section{Input information}
 \subsection{The Sponsor}
-The sponsor, he explained, that he would like to have an application or website, which he "can give to a customer to play around with and get to know the skills of IBM" \parencite{Sachs.20.04.2017b}. As a legacy from times when IBM was mainly a mainframe hardware supplier, IBM is perceived with its past skill , he further points out \parencite{Sachs.20.04.2017b}. Therefore the app must arouse the interest of the potential customer and display that IBM has experience, knowledge and skills in the domain of banking software migration. 
+The sponsor, he explained, that he would like to have an application or website, which he can give to a customer to play around with and to get to know the skills of IBM \parencite{Sachs.20.04.2017b}. As a legacy from times when IBM was mainly a mainframe hardware supplier, IBM is perceived with its past skill , he further points out \parencite{Sachs.20.04.2017b}. Therefore the app must arouse the interest of the potential customer and display that IBM has experience, knowledge and skills in the domain of banking software migration. 
 
 \paragraph{} As a condition for access by the potential customer, the sponsor required some kind of authentication, which would lock the customer out after two weeks time, if the access is not extended by an IBM opportunity owner.
 
@@ -10,7 +10,7 @@ The sponsor, he explained, that he would like to have an application or website,
 
 \paragraph{} As a visual appearance, the sponsor demanded a stereotypical generalized online banking application.
 
-Constraining the development of the application, the sponsor requested that the application will not generate costs when not in use, is developed by corporate student in their three month practical - as it is common at IBM - and will be developed in iterative development \textbf{cycles}. This approach is requested to ensure usable products after the three month term.
+\paragraph{} Constraining the development of the application, the sponsor requested that the application will not generate costs when not in use, is developed by corporate student in their three month practical - as it is common at IBM - and will be developed in iterative development cycles. This approach is requested to ensure usable products after the three month term.
 
 \paragraph{} Summarized:
 
@@ -61,7 +61,7 @@ The domain of B2B marketing is described in \Cref{} on \cpagerefrange{}{}. Impor
 Since the principle of attention economy suggests that attention of users may be lost quickly due to other factors (cf. \Cref{}):
 
 \begin{closeItem}
-    \item [\textbf{I8}] When a customer stops using the application, the application should be able to retrieve his or her attention.
+    \item [\textbf{I8}] When a customer stops using the application, the application should be able to retrieve back his or her attention.
 \end{closeItem}
 
 \paragraph{}
@@ -190,6 +190,7 @@ The complete set of personas can be seen in the appendix (cf. \cpagerefrange{}{}
 
 He would use the application, if it gave him quick insights into the suppliers skills. What he refuses to take a look into are marketing phrases, which contain no controllable information or arbitrary facts, anyone can find out without deeper knowledge of the banking industry. As requirements for the system, he uses a PC running Windows 7 for work and browses the web with the pre-installed Internet Explorer. Since his company checks every Update by Microsoft for Bug before delivering them to the employees, he is sometimes not on the newest Version of the Software. He does not use a smart phone, but a classic cellphone.
 
+\paragraph{}
 The personal traits were results of past experience of the author. The reasons Patrick gained the technical traits, was to fulfill the overall statistics, as follows:
 \begin{enumerate}
     \item \textcite{StatCounter.2017} measured every tenth desktop user on the web uses Internet Explorer and 39\% used Windows 7. 
@@ -199,27 +200,147 @@ The personal traits were results of past experience of the author. The reasons P
 From the personas shown, following information can be retrieved:
 
 \begin{closeItem}
-    \item []
+    \item [\textbf{I11}] When the system is developed, the system must support a wide variety of platforms.
+    \item [\textbf{I12}] When accessed by a customer, the system must validate the conscientiousness of IBM when developing.
 \end{closeItem}
 
 \subsection{Existing System Information}
 As mentioned earlier, IBM require w3ID-Log in for employees, which is a OAuth2.0 \parencite[cf.][]{InternetEngineeringTaskForce.2012} based authentication procedure. This has to be fulfilled in order to have  usable product. 
-\begin{closeItem}
-    \item []
-\end{closeItem}
+
+\paragraph{} On the other hand, the request by the sponsor that the application should generate no cost to the cost center when not in use, implies that it either must be installable via a portable storage device, or hosted on Bluemix, the IBM cloud service, which is free to use within IBM upto certain limits. The fist option is unlikely, because - at least IBM security rules - forbid usage of third party storage devices without prior examination.
+
+Summarized: 
+
 \paragraph{}
-
+\begin{closeItem}
+\item [\textbf{I14.2}] If a IBM employee tries to authenticate, the system must provide OAuth 2.0 functionality. 
+\item[\textbf{13}] When the development reaches a deployable state, the code shall be deployed to Bluemix.
+\end{closeItem}
 \section{System Context Definition}
-\subsection{Entities}
+In order to define the system context, the information collected in the previous section will be analyzed for implications on the four facets explained in \Cref{} on \cpagerefrange{}{}.
 
+\subsection{Entities}
+The main entity identified - to this point - to be identified is information about IBM knowledge and experience on banking software migration (mentioned in \textbf{I1, I7, I9 - I10} and most personas). This entity is core to the intend of most direct stakeholders and many expectations are related to those. Different customer employees demand different kinds of information, while all require the information to not be high level marketing formulations.
+
+\paragraph{} Other entities relate to authentication: IBM employees must be represented in the system, in order to identify them when logging in (cf. \textbf{I4}). On the other hand customers must be reflected in the system. Those information must be related to authentication (cf. \textbf{I2}) and to the customer's individual business case (cf. \textbf{I7}. 
 \subsection{IT-System}
+The system must be able to connect to OAuth 2.0 services, as of demanded in \textbf{I4.2}.
+
+\paragraph{} The system itself must run on a Bluemix Server (cf. \textbf{I13}), which can either be a Node.JS or a Java for Liberty (Java EE; cf. \cite{}). 
 
 \subsection{Usage}
+The users of the system are customer employees, IBM opportunity owner and the sponsor (cf. \cpageref{}). The main goals for usage of the personas are: 
+\paragraph{}
+\begin{closeItemCol}
+    \item Easy and fast UI
+    \item Provide high quality information
+    \item Provide a trustworthy picture of IBM.
+\end{closeItemCol}
 
 \subsection{Development}
-
+Different requirements regard the development of the appliction: 
+\paragraph{}
+\begin{closeItemCol}
+    \item Build on Bluemix
+    \item Provide high quality information
+    \item Provide a trustworthy picture of IBM.
+\end{closeItemCol}
 
 \section{Engineering Requirements}
+Anforderung 1.1: Wenn ein Nutzer Auf Navigationselemente klickt, muss die Applikation fähig sein, die hinterlegte Ansicht anzuzeigen. 
+Dies beinhaltet in erster Linie, aber nicht ausschließlich: Menüpunkte, Button, Übersichtsblöcke
+
+
+Anforderung 1.2: Wenn ein Nutzer auf ein Element klickt, muss die Applikation fähig sein, das geklickte Element zu identifizieren.
+
+
+Anforderung 1.3: Wenn ein Element identifiziert wurde, muss die Applikation fähig sein, zugeordnete Hinweistexte anzuzeigen.
+
+
+Anforderung 1.4: Wenn ein Hinweis angezeigt wird, muss die Applikation Nutzern die Möglichkeit bieten, den Hinweis auszublenden.
+
+
+Anforderung 1.5: Bei Nutzung, kann die Applikation Nutzern die Möglichkeit bieten, ihren Fortschritt einzusehen.
+
+
+Anforderung 2.1: Wenn die Seite aufgerufen wird, muss die Applikation Administratoren die Möglichkeit bieten, sich via w3ID als Administrator einzuloggen.
+Dies heißt nicht, dass jeder IBMer ein Administrator sein soll, aber, dass jeder Administrator IBMer sein muss. Der initiale Administrator soll Markus Sachs sein.
+
+
+Anforderung 2.2: Wenn ein Administrator eingeloggt ist, muss die Applikation die Möglichkeit bieten, neue Administratoren zu benennen. 
+
+
+Anforderung 2.2: Wenn ein Administrator eingeloggt ist, muss die Applikation die Möglichkeit bieten, Mandanten samt GUID-Token anzulegen.
+
+
+Anforderung 2.3: Wenn die Seite aufgerufen wird, muss die Applikation Nutzern die Möglichkeit bieten, sich via GUID-Token einzuloggen.
+
+
+Anforderung 2.4: Nach Ablauf von einer festen Laufzeit nach dem Erstellen eines Mandanten, muss die Applikation fähig sein, den Zugang automatisch zu sperren.
+
+
+Anforderung 3.1: Wenn ein Administrator eingeloggt ist, muss die Applikation die Möglichkeit bieten, Hinweistexte zu bearbeiten.
+
+
+Anforderung 3.2: Wenn ein Administrator eingeloggt ist, muss die Applikation die Möglichkeit bieten, Hinweistexte beliebigen Elementen der Nutzeransicht zuzuordnen.
+
+
+Anforderung 3.3: Wenn ein Administrator eingeloggt ist, muss die Applikation die Möglichkeit bieten, die Inhaltliche Struktur der Seite zu bearbeiten. 
+
+
+Anforderung 4.1: Wenn ein Administrator eingeloggt ist, soll die Applikation die Möglichkeit bieten, Szenarien anzulegen.
+Ein Szenario ist eine Auswahl an Hinweisen, die ausschließlich angezeigt werden sollen. 
+
+
+Anforderung 4.2: Wenn ein Szenario angelegt wurde, soll die Applikation die Möglichkeit bieten, Ausprägungen der Hinweistexte für das Szenario anzulegen. 
+Eine Ausprägung ist ein alternativer Text für den gleichen Hinweis.
+
+
+Anforderung 4.3: Wenn ein Administrator eingeloggt ist, muss die Applikation die Möglichkeit bieten, den erstellten Mandanten (siehe Anforderung 2.2) ein Szenario zuzuordnen.
+
+
+Anforderung 5: Wenn ein Administrator eingeloggt ist, soll die Applikation die Möglichkeit bieten, das Farbschema für einen Mandanten anzupassen.
+
+
+Anforderung 6.1: Wenn ein Administrator eingeloggt ist, soll die Applikation die Möglichkeit bieten, neue Layouts in Form von CSS-Dateien hochzuladen.
+
+
+Anforderung 6.2: Wenn ein Administrator eingeloggt ist, muss die Applikation die Möglichkeit bieten, den erstellten Mandanten (siehe Anforderung 2.2) ein Layout zuzuordnen.
+
+
+Qualitätsanforderung 1: Wenn eine Funktionalität entwickelt wird, muss stets die Implementierung zukünftiger Anforderung bedacht werden.
+Dies beinhaltet nicht nur die in diesem Dokument beschriebenen Anforderungen, da diese sich bis zur Umsetzung jederzeit ändern können.
+
+
+Qualitätsanforderung 2: Wenn eine neue Funktionalität in Betrieb genommen wird, muss das System Standardwerte für alte Mandanten annehmen, die das bisherige Verhalten beibehalten.
+
+
+Qualitätsanforderung 3: Wenn die Nutzeroberfläche entwickelt wird, muss der Programmierer nach der Maxime „Mobile First“ entwickeln. 
+
+
+Qualitätsanforderung 4.1: Wenn die Entwicklung begonnen wird, muss der Entwickler die IBM Tools Bluemix und das zugehörige Git nutzen.
+
+
+Qualitätsanforderung 4.2: Wenn die Entwicklungsumgebung aufgesetzt wird, muss ein Continous Delivery Strem mit automatisierten Tests aufgesetzt werden. 
+
+
+Qualitätsanforderung 5: Wenn eine Funktionalität entwickelt wurde, muss der Entwickler PWA-Funktionalitäten – wo sinnvoll – implementieren.
+
+\begin{table}[]
+    \centering
+    \begin{tabular}{|m{5.33cm}|m{5.33cm}|m{5.33cm}|}
+    &   Zieltechnologie &   Fallback    \\
+    \hline \\
+Offline-Funktionalität  &	ServiceWorker   &   AppCache    \\
+App-„Look & Feel“	&   App-Manifest (Google) / Meta-Tags (Apple) &  ~~~ \\
+Nutzerdatenspeicher (e.g. Fortschritt)	&   LocalStorage    &   Cookies    \\
+Nutzerinteraktion	&   Vibrate & Notification  & ~~~  \\
+    \end{tabular}
+    \caption{Caption}
+    \label{tab:my_label}
+\end{table}
+
+
 
 
 \chapter{Discussion}
@@ -229,3 +350,7 @@ As mentioned earlier, IBM require w3ID-Log in for employees, which is a OAuth2.0
 
 
 \chapter{Conclusion}
+
+\begin{itemize}
+
+\end{itemize}
