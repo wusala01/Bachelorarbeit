@@ -51,14 +51,14 @@ Subsequent to \textbf{I4}, IBM has a organizational standard for authentication 
 No proof could be found for any regulation concerning the functionality of the application. To this point, it will not collect any information, display any personal information, export US-American intellectual property or show any other regulation related behaviour. On the other hand, this research must be done exhaustively by a legal expert, which was not available for this research.
 
 \subsection{Domain Information}
-The domain of B2B marketing is described in \Cref{} on \cpagerefrange{}{}. Important conclusions are: 
+The domain of B2B marketing is described in \Cref{ssec:b2b} on \cpagerefrange{ssec:b2b}{endb2b}. Important conclusions are: 
 
 \begin{closeItem}
     \item [\textbf{I6}] When creating the stakeholder map, the requirements engineer shall integrate the customer's stakeholders.
     \item [\textbf{I7}] When a B2B customer is approached, the communication should address to his or her individual case.
 \end{closeItem}
 
-Since the principle of attention economy suggests that attention of users may be lost quickly due to other factors (cf. \Cref{}):
+Since the principle of attention economy suggests that attention of users may be lost quickly due to other factors (cf. \Cref{ssec:attention}):
 
 \begin{closeItem}
     \item [\textbf{I8}] When a customer stops using the application, the application should be able to retrieve back his or her attention.
@@ -102,7 +102,7 @@ The sponsor and IBM corporation are not tracked back, since they are the basic s
     \item IBM Corporation
 \end{closeItemCol}
 
-In reference to the specialties of B2B marketing mentioned on \cpageref{}, the customer demand for service is only derived from their customer demands. Therefore, these customers have to be included as well. 
+In reference to the specialties of B2B marketing mentioned on \cpageref{ssec:b2b}, the customer demand for service is only derived from their customer demands. Therefore, these customers have to be included as well. 
 
 \paragraph{} Basically, those can be separated into consumers and other businesses. As of the explanation from the sponsor, the consumer group is split into 2 groups: core banking customer, meaning people who only have bank account and credits, and those who additionally do stock broking. 
 
@@ -147,13 +147,13 @@ Finanzdienstleistungsaufsicht} (BaFin), the German institute for financial super
 \end{closeItemCol}
 
 \subsubsection{Stakeholder Maps}
-For translation into stakeholder maps as described in \Cref{} on \cpageref{}, the stakeholders must be ordered by intensity of usage, and by influence on the service. Each from the perspective of the service. Therefore the stakeholders of IBM will be ordered by the usage and influence of the desired marketing app, and the customer's stakeholders by the usage of and influence on the banking service.
+For translation into stakeholder maps as described in \Cref{ssec:personas}, the stakeholders must be ordered by intensity of usage, and by influence on the service. Each from the perspective of the service. Therefore the stakeholders of IBM will be ordered by the usage and influence of the desired marketing app, and the customer's stakeholders by the usage of and influence on the banking service.
 
 \paragraph{}
 Ordering the IBM's stakeholders by usage is pretty straight foreword: The IBM opportunity owners will be the most frequent users, because they will use the application frequently to allow customer access. All customer roles will be using the application for a single approximately two week time period what makes them irregular users.
 The developer and IBM Corporation will not be users of the application, one only accessing the application for test reasons, the other executing only regulatory authority. 
 
-\paragraph{} More carefully, the order of influence must be generated, since the term influence can be ambiguous: On the one hand, it could mean the influence on the app development - which is the correct interpretation (cf. \Cref{}) -, on the other hand, the influence on the buying decision of the customer might be of interest.
+\paragraph{} More carefully, the order of influence must be generated, since the term influence can be ambiguous: On the one hand, it could mean the influence on the app development - which is the correct interpretation (cf. \cpageref{fig:stakeMap}) -, on the other hand, the influence on the buying decision of the customer might be of interest.
 
 
 \begin{figure}[H]
@@ -179,7 +179,7 @@ Regarded most influential, the BaFin is not using the banking service. This is c
 \paragraph{} In terms of usage, stock brokers will be most likely to use the banking service more often, because they have more to do. Professionals will use the bank service more frequently than private individuals, because most companies turn over more money than companies. 
 
 \subsubsection{Personas}
-The complete set of personas can be seen in the appendix (cf. \cpagerefrange{}{}). As an exemplary case, follows the persona of Patrick Maurer (cf. \Cref{fig:PatrickMaurer}), who is a procurement manager at a bank in Frankfurt. He is kind of a diligent and wary once it comes to marketing presentations. This is because as a procurement manager, he is being held responsible, if what he ordered was not what it promised to be. 
+The complete set of personas can be seen in the appendix (cf. \cpagerefrange{persbegin}{persend}). As an exemplary case, follows the persona of Patrick Maurer (cf. \Cref{fig:PatrickMaurer}), who is a procurement manager at a bank in Frankfurt. He is kind of a diligent and wary once it comes to marketing presentations. This is because as a procurement manager, he is being held responsible, if what he ordered was not what it promised to be. 
 
 \begin{figure}[H]
     \centering
@@ -220,12 +220,12 @@ Summarized:
 
 \begin{figure}
     \centering
-    \includegraphics{}
-    \caption{Caption}
+    \includegraphics[width=\textwidth]{img/diagrams/Context.png}
+    \caption[Application System Context Diagram]{Application System Context Diagram (own illustration)}
     \label{fig:my_label}
 \end{figure}
 
-In order to define the system context, the information collected in the previous section will be analyzed for implications on the four facets explained in \Cref{} on \cpagerefrange{}{}.
+In order to define the system context, the information collected in the previous section will be analyzed for implications on the four facets explained in \Cref{beginFacets} on \cpagerefrange{beginFacets}{endFacet}.
 
 \subsection{Entities}
 The main entity identified - to this point - to be identified is information about IBM knowledge and experience on banking software migration (mentioned in \textbf{I1, I7, I9 - I10} and most personas). This entity is core to the intend of most direct stakeholders and many expectations are related to those. Different customer employees demand different kinds of information, while all require the information to not be high level marketing formulations.
@@ -237,7 +237,7 @@ The system must be able to connect to OAuth 2.0 services, as of demanded in \tex
 \paragraph{} The system itself must run on a Bluemix Server (cf. \textbf{I13}), which can either be a Node.JS or a Java for Liberty (Java EE; cf. \cite{}). 
 
 \subsection{Usage}
-The users of the system are customer employees, IBM opportunity owner and the sponsor (cf. \cpageref{}). An additional actor on the system is the developer. 
+The users of the system are customer employees, IBM opportunity owner and the sponsor. An additional actor on the system is the developer. 
 
 \paragraph{} Extracting from the personas of the customer employees, one can deuce that they want to have specific solutions for their defined problems. This follows the line of the subsection \say{B2B versus B2C Marketing}. There \textcite[21]{Backhaus.2015b} suggested that larger decision maker groups with defined requirements demand a individualized communication, as they are a custom to by sales men and proposal presentations. 
 
@@ -478,7 +478,3 @@ This paper found no satisfying set of aspects to consider when designing an B2B 
 \end{itemize}
 
 \paragraph{} Because this paper could not find a diverse set of information on the customer, thereby these results can at most be regarded as hypothesis. Further research will have to show whether these conclusions will be confirmed.
-
-\begin{itemize}
-
-\end{itemize}
