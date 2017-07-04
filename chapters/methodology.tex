@@ -8,7 +8,7 @@
     \label{fig:iterative}
 \end{figure}
 
-\paragraph{} This reflects the iterative nature of requirements engineering as described on \cpageref{iterative}. Thereby a check for bidirectional implications of architecture concept and requirement will be made by the end of each step of the following procedure.
+\paragraph{} This reflects the iterative nature of requirements engineering as described on \cpageref{iterative}. Thereby a check for bidirectional implications of architecture concept and requirement will be made by the end of the following procedure.
 
 \paragraph{} The practical appliance will start with the definition of the context and then continue with the performance of the three main activities (cf. \cpageref{mainactivity} and \cpagerefrange{beginmain}{endmain}). An Architectural concept will be created, as described above, followed by a visual concept. 
 
@@ -96,7 +96,7 @@ Requirements must be expressed distinctly, in order to ensure that the system is
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{img/SentenceStructure.png}
-    \caption{Requirement Documentation Sentence Structure (own illustration based on \cite[246]{Pohl.2007})}
+    \caption[Requirement Documentation Sentence Structure]{Requirement Documentation Sentence Structure (own illustration based on \cite[246]{Pohl.2007})}
     \label{fig:sentencestructure}
 \end{figure}
 
@@ -115,7 +115,7 @@ Use case diagrams (see below) will be utilized for the documentation of stakehol
 \begin{figure}[H] 
     \centering
     \includegraphics[width=0.28\textwidth]{img/ucSymb.png}
-    \caption{Use Case Diagram Notation (own illustration based on \cite[163]{Pohl.2007}}\label{fig:ucSymb}
+    \caption[Use Case Diagram Notation]{Use Case Diagram Notation (own illustration based on \cite[163]{Pohl.2007}}\label{fig:ucSymb}
 \end{figure}
 
 A use case diagram displays goals of stakeholders by abstracting stakeholders into actors, connected to use cases - abstracted goals -, when interacting with the system. Use case diagrams consist of actors, use cases and the system. It display in what kind the actors are directly or indirectly linked to the use cases. Both actors and use cases, can be generalized in an aggregated version of themselves. The notation may be seen in \Cref{fig:ucSymb}.
@@ -139,7 +139,7 @@ Other actors might have different but also overlapping goals.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{img/ActivitySymbols.pdf}
-    \caption{Notation}\label{fig:adSymb}
+    \caption[Activity Diagram Notation]{Activity Diagram Notation \parencite{ObjectManagementGroup.01.03.2015}}\label{fig:adSymb}
 \end{figure}
 
 \paragraph{} The activity diagram, on the other hand, expresses a chronological order of activities executed in a use case. These diagrams have a set starting point and at least two end points. In between, actions are connected by control flow lines. This flow can separate and join again to display more complex, non-linear activities  (cf. \Cref{fig:adSymb}).
@@ -147,7 +147,7 @@ Other actors might have different but also overlapping goals.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{img/ActivityExample.pdf}
-    \caption{Activity Diagram Example \parencite[380]{ObjectManagementGroup.01.03.2015}}\label{fig:adEx}
+    \caption[Activity Diagram Example]{Activity Diagram Example \parencite[380]{ObjectManagementGroup.01.03.2015}}\label{fig:adEx}
 \end{figure}
 
 \paragraph{} For demonstration purposes, \Cref{fig:adEx} shows a order processing activity. After receiving the request, it is decided whether the order is rejected or accepted. If the order is accepted, the order is shipped and an invoice is sent. Once the invoice is received, and the order shipped, the order is closed. \\
@@ -177,27 +177,27 @@ The example in \Cref{fig:fmEx} illustrates such a function diagram. In this part
 \subsection{Conformity}
 Whenever conflicts of requirements appear during documentation, or in conception, these will be tried to resolve in cooperation with the stakeholders. 
 
-\section{Architectural Conception}
-This paper will use UML component diagrams in the alternative notation \parencite[cf.][212]{ObjectManagementGroup.01.03.2015} for architectural composition of the application. An example of a component diagram can be seen in \Cref{fig:comEx}.
+% \section{Architectural Conception}
+% This paper will use UML component diagrams in the alternative notation \parencite[cf.][212]{ObjectManagementGroup.01.03.2015} for architectural composition of the application. An example of a component diagram can be seen in \Cref{fig:comEx}.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{img/componentExample.pdf}
-    \caption[Component Diagram Example]{Component Diagram Example \parencites[2132]{ObjectManagementGroup.01.03.2015}}
-    \label{fig:comEx}
-\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=\textwidth]{img/componentExample.pdf}
+%     \caption[Component Diagram Example]{Component Diagram Example \parencites[2132]{ObjectManagementGroup.01.03.2015}}
+%     \label{fig:comEx}
+% \end{figure}
 
-A component in UML notation may be identified either by the keyword \ssay{<<component>>}, or by a component icon in the top right corner \parencites[cf.][208]{ObjectManagementGroup.01.03.2015}. Both is true for \Cref{fig:comEx}. 
+% A component in UML notation may be identified either by the keyword \ssay{<<component>>}, or by a component icon in the top right corner \parencites[cf.][208]{ObjectManagementGroup.01.03.2015}. Both is true for \Cref{fig:comEx}. 
 
-\paragraph{} In UML structure diagrams, as the component diagram is, entities follow some basic structures:
+% \paragraph{} In UML structure diagrams, as the component diagram is, entities follow some basic structures:
 
-\begin{enumerate}
-    \item Entities are labeled by a name, and/or are assigned a  classifier by the \ssay{:[classifier]}-notation  \parencite[cf.][125]{ObjectManagementGroup.01.03.2015}. For instance in \Cref{fig:comEx} \ssay{Store} is the name of a component and its inner components are classified as \ssay{Order},\ssay{Customer}, and \ssay{Product}. If \ssay{Store} gets assigned to a classifier (e.g.~\ssay{Business}), the new label will be \ssay{Store :Business}.
+% \begin{enumerate}
+%     \item Entities are labeled by a name, and/or are assigned a  classifier by the \ssay{:[classifier]}-notation  \parencite[cf.][125]{ObjectManagementGroup.01.03.2015}. For instance in \Cref{fig:comEx} \ssay{Store} is the name of a component and its inner components are classified as \ssay{Order},\ssay{Customer}, and \ssay{Product}. If \ssay{Store} gets assigned to a classifier (e.g.~\ssay{Business}), the new label will be \ssay{Store :Business}.
     
-    \item Components can provide and use interfaces, called ports \parencite[cf.][182-184]{ObjectManagementGroup.01.03.2015}. In \Cref{fig:comEx} the component, classified as \ssay{:Product}, provides the interface \ssay{OrderableItem}, which is used by \ssay{:Order}.
+%     \item Components can provide and use interfaces, called ports \parencite[cf.][182-184]{ObjectManagementGroup.01.03.2015}. In \Cref{fig:comEx} the component, classified as \ssay{:Product}, provides the interface \ssay{OrderableItem}, which is used by \ssay{:Order}.
     
-    \item Whenever an interface is provided to outside components, a square displays the delegation \parencite[cf.][212]{ObjectManagementGroup.01.03.2015}. In \Cref{fig:comEx} for instance, the port \ssay{OrderEntry} is originally provided by some internal logic of \ssay{:Order}, then delegated to \ssay{Store}, which provides it to other external components. 
-\end{enumerate}
+%     \item Whenever an interface is provided to outside components, a square displays the delegation \parencite[cf.][212]{ObjectManagementGroup.01.03.2015}. In \Cref{fig:comEx} for instance, the port \ssay{OrderEntry} is originally provided by some internal logic of \ssay{:Order}, then delegated to \ssay{Store}, which provides it to other external components. 
+% \end{enumerate}
 
 
 \subsection{User Interface Conception with Wireframes}
